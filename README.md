@@ -1,5 +1,6 @@
 ### Hi there 👋
 
+欢迎访问我的github主页，需要公版书资源的朋友请访问：https://www.7sbook.com/
 <!--
 **eenot/eenot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
