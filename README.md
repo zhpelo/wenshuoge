@@ -45,6 +45,9 @@ https://www.wenshuoge.com/ 正在缓慢整理中....
 
 https://www.wenshuoge.com/
 
+![文硕阁](https://github.com/user-attachments/assets/954ffcd4-643d-4415-aa8f-77e7140e2253)
+
+
 <!--
 **eenot/eenot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
