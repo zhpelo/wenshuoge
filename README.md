@@ -25,6 +25,10 @@
 
 https://www.wenshuoge.com/ 正在缓慢整理中....
 
+![孙子兵法](科学/军事兵法/孙子兵法/孙子兵法.png)
+
+
+
 ## 🍎什么是公版书？
 
 根据我国现行「著作权法」第 20、21 条的规定，除署名权、修改权、保护作品完整权外，中国公民对其著作的法定权利均于作者死亡后第五十年的 12 月 31 日截止。超过著作权法保护日期后，其作品就进入了公有领域（公共版权）
@@ -47,18 +51,3 @@ https://www.wenshuoge.com/
 
 ![文硕阁](https://github.com/user-attachments/assets/954ffcd4-643d-4415-aa8f-77e7140e2253)
 
-
-<!--
-**eenot/eenot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
