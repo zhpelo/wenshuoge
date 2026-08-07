@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="8" fill="#efe3ca"/>
+  <rect x="9" y="7" width="46" height="50" fill="#922f28" stroke="#6e201b" stroke-width="3"/>
+  <rect x="14" y="12" width="36" height="40" fill="none" stroke="#e7c68e" stroke-width="1.5"/>
+  <text x="32" y="30" text-anchor="middle" font-family="serif" font-size="16" font-weight="700" fill="#f2d8a8">文硕</text>
+  <text x="32" y="47" text-anchor="middle" font-family="serif" font-size="16" font-weight="700" fill="#f2d8a8">阁</text>
+</svg>

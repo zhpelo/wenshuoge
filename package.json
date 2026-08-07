@@ -1,0 +1,20 @@
+{
+  "name": "wenshuoge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "index": "node scripts/build-index.mjs",
+    "dev": "npm run index && node node_modules/wrangler/bin/wrangler.js dev --local",
+    "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
+    "check": "npm run index && npm run typecheck && node node_modules/wrangler/bin/wrangler.js deploy --dry-run --outdir dist",
+    "deploy": "npm run index && node node_modules/wrangler/bin/wrangler.js deploy",
+    "upload:books": "node scripts/upload-r2.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260804.1",
+    "fflate": "^0.8.2",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.28.1"
+  }
+}

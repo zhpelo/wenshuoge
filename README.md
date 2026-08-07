@@ -1,31 +1,106 @@
-# 📚 文硕阁 - 中文公版书整理项目
+# 📚 文硕阁 · 中文公版书数字书阁
 
 <div align="center">
 
-[![文硕阁](https://github.com/user-attachments/assets/b9a50301-b961-4e3d-bcda-a8f5320f047b)](https://www.wenshuoge.com/)
-
 **传承中华文化瑰宝 · 免费分享公版经典**
 
-[🌐 访问文硕阁网站](https://www.wenshuoge.com/) · [📖 开始阅读](#电子书列表)
+[🌐 在线访问](https://www.wenshuoge.com/) · [🔎 检索藏书](https://www.wenshuoge.com/#library) · [📖 电子书目录](#电子书列表)
 
 </div>
 
 ---
 
-## 📖 项目简介
+## 🖼️ 网站预览
+
+[![文硕阁网站预览](docs/images/wenshuoge-preview.jpg)](https://www.wenshuoge.com/)
+
+> 正式站点已部署至 Cloudflare：**[www.wenshuoge.com](https://www.wenshuoge.com/)**
+
+## 📖 关于文硕阁
 
 大家好！我是文硕阁的创建者，一个热爱中华传统文化的公版书爱好者。
 
-在这个信息爆炸的时代，我们致力于收集、整理和分享那些已经进入公共版权领域的中文经典著作，让这些文化瑰宝能够被更多人轻松获取和阅读。
+文硕阁致力于收集、整理和分享已经进入公共版权领域的中文经典著作，让这些文化瑰宝能够被更多人轻松检索、阅读和下载。网站完全公开免费，无需登录注册，不设会员，也没有广告。
 
-### 🎯 我们的使命
+## ✨ 网站能力
+
+- 🔎 **即时检索**：支持按书名、作者和主题检索全部藏书
+- 📚 **双格式取阅**：提供 EPUB、PDF 两种常用电子书格式
+- 🪵 **拟物化设计**：木质书架、实体封面、宣纸与印章视觉效果
+- 📱 **响应式布局**：适配桌面电脑、平板和手机
+- 🌏 **全球边缘访问**：网站与电子书均由 Cloudflare 网络提供服务
+- 🆓 **完全公开免费**：无需登录、无需注册、无会员、无广告
+
+## 🧱 技术架构
+
+网站前端、检索索引和电子书文件均可运行在 Cloudflare 服务中：
+
+| 组件 | 用途 |
+|:---|:---|
+| **Cloudflare Workers** | 路由、电子书访问接口与安全响应头 |
+| **Workers Static Assets** | 托管 HTML、CSS、JavaScript、封面和检索索引 |
+| **Cloudflare R2** | 存放 `ebookfiles` 中的 EPUB、PDF 文件 |
+| **Wrangler** | 本地开发、类型生成、R2 管理和生产部署 |
+| **自动索引脚本** | 从 EPUB 提取书名、作者和主题，生成紧凑书目索引 |
+
+电子书通过 Worker 从 R2 流式返回，并支持 HTTP Range 分段读取，适合在线打开较大的 PDF 文件。公开检索索引经过紧凑化处理，当前约为 **1.32 MB**。
+
+### 项目目录
+
+```text
+├── ebookfiles/          # EPUB、PDF 原始电子书
+├── public/              # 网站页面、样式、脚本和生成后的书目索引
+├── scripts/             # 书目索引与 R2 上传脚本
+├── src/                 # Cloudflare Worker 入口
+├── docs/images/         # README 网站预览图
+└── wrangler.jsonc       # Cloudflare 部署与绑定配置
+```
+
+## 🚀 开发与部署
+
+### 本地运行
+
+```bash
+npm install
+npm run dev
+```
+
+打开 `http://localhost:8787` 即可预览。书目检索可完整使用；本地 R2 未放入文件时，下载入口会提示文件尚未同步。
+
+### 部署到 Cloudflare
+
+首次部署前登录 Cloudflare，检查 R2 存储桶是否存在：
+
+```bash
+node node_modules/wrangler/bin/wrangler.js login
+node node_modules/wrangler/bin/wrangler.js r2 bucket list
+```
+
+如果列表中没有 `wenshuoge`，再创建存储桶：
+
+```bash
+node node_modules/wrangler/bin/wrangler.js r2 bucket create wenshuoge
+```
+
+上传电子书并发布网站：
+
+```bash
+npm run upload:books
+npm run deploy
+```
+
+`wrangler.jsonc` 已配置自定义域名 `www.wenshuoge.com`。域名需要位于同一个 Cloudflare 账户中；首次部署时 Cloudflare 会创建对应的 Worker 自定义域名记录。
+
+R2 对象使用 `ebookfiles/<编号>/<文件名>` 作为存储键。每次新增电子书后，执行 `npm run index` 即可重建检索索引；`npm run check` 可在发布前完成类型检查与 Cloudflare 部署预检。
+
+## 🎯 我们的使命
 
 文化是一个国家、一个民族的灵魂。我们相信：
 - **文化兴国运兴** · 文化强民族强
 - **源浚者流长** · 根深者叶茂
 - **传承文明硕果** · 保护文化遗产
 
-### 🌟 项目特色
+## 🌟 项目特色
 
 - ✅ **完全免费** - 无需登录注册，无需下载APP
 - ✅ **格式丰富** - 提供EPUB、PDF等多种电子书格式
@@ -39,7 +114,7 @@
 
 | 📚 总藏书量 | 📖 整理章节 | 📝 总字数 | 🔄 更新状态 |
 |:---:|:---:|:---:|:---:|
-| **13,846本** | **259,450个** | **16.46亿字** | 持续整理中 |
+| **12,897本** | **259,450个** | **16.46亿字** | 持续整理中 |
 
 **🕒 每日更新** · **📈 稳步增长** · **🌍 服务全球**
 

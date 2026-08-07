@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3b1f16" />
+    <meta name="description" content="文硕阁——无需注册、完全免费的中文公版电子书分享站，支持 EPUB 与 PDF 格式检索和阅读。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+    <title>文硕阁｜免费公版书分享</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#library">跳到藏书</a>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="文硕阁首页">
+        <span class="brand-seal" aria-hidden="true">文<br />硕</span>
+        <span class="brand-name">文硕阁<small>WEN SHUO GE</small></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#library">藏书检索</a>
+        <a href="#about">关于本站</a>
+      </nav>
+      <span class="public-badge">公开 · 免费 · 无需登录</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grain" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span>中华公版典籍数字书阁</p>
+          <h1 id="hero-title"><span>卷帙浩繁，</span><br />一搜即得。</h1>
+          <p class="hero-intro">收集散落的古籍与经典，让每一册好书都能被自由阅读、下载与分享。</p>
+
+          <form class="hero-search" id="hero-search" role="search">
+            <label class="sr-only" for="hero-query">搜索书名、作者或主题</label>
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="hero-query" type="search" placeholder="搜索书名、作者或主题，如：史记、鲁迅、诗词" autocomplete="off" />
+            <button type="submit">寻书</button>
+          </form>
+          <div class="quick-search" aria-label="热门搜索">
+            <span>不妨搜搜</span>
+            <button data-query="四大名著">四大名著</button>
+            <button data-query="史记">史记</button>
+            <button data-query="诗词">诗词</button>
+            <button data-query="鲁迅">鲁迅</button>
+          </div>
+        </div>
+
+        <div class="hero-library" aria-label="精选典籍陈列">
+          <div class="moon-window">
+            <span class="mountain mountain-back"></span>
+            <span class="mountain mountain-front"></span>
+          </div>
+          <div class="display-books" id="display-books" aria-hidden="true">
+            <div class="standing-book book-red"><span>史记</span><i>太史公书</i></div>
+            <div class="standing-book book-blue"><span>论语</span><i>儒家经典</i></div>
+            <div class="standing-book book-green"><span>孙子兵法</span><i>兵学圣典</i></div>
+            <div class="flat-book flat-one"></div>
+            <div class="flat-book flat-two"></div>
+          </div>
+          <div class="wood-shelf" aria-hidden="true"></div>
+        </div>
+
+        <div class="hero-stats" aria-label="书库统计">
+          <div><strong id="hero-total">—</strong><span>册公版藏书</span></div>
+          <div><strong>2</strong><span>种通用格式</span></div>
+          <div><strong>0</strong><span>注册与付费</span></div>
+        </div>
+      </section>
+
+      <section class="library-section" id="library" aria-labelledby="library-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow dark"><span></span>THE COLLECTION</p>
+            <h2 id="library-title">阁中藏书</h2>
+          </div>
+          <p>全部来源于本项目 <code>ebookfiles</code> 目录，书目随项目更新自动重建。</p>
+        </div>
+
+        <div class="catalog-toolbar">
+          <form class="catalog-search" id="catalog-search" role="search">
+            <label class="sr-only" for="catalog-query">搜索藏书</label>
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="catalog-query" type="search" placeholder="在全阁中检索……" autocomplete="off" />
+            <button type="submit">搜索</button>
+          </form>
+          <div class="format-filter" aria-label="格式筛选">
+            <button class="active" data-format="all">全部</button>
+            <button data-format="epub">EPUB</button>
+            <button data-format="pdf">PDF</button>
+          </div>
+        </div>
+
+        <div class="result-meta" aria-live="polite">
+          <p id="result-count">正在清点藏书……</p>
+          <button id="clear-search" hidden>清除检索</button>
+        </div>
+
+        <div class="book-grid" id="book-grid" aria-live="polite" aria-busy="true">
+          <div class="loading-card"></div><div class="loading-card"></div><div class="loading-card"></div><div class="loading-card"></div>
+        </div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>空</span>
+          <h3>没有寻到这册书</h3>
+          <p>换一个书名、作者或更短的关键词试试。</p>
+        </div>
+        <button class="load-more" id="load-more" hidden>再取一架书 <span>↓</span></button>
+      </section>
+
+      <section class="reading-note" id="about" aria-labelledby="about-title">
+        <div class="paper-stack" aria-hidden="true"></div>
+        <div class="note-seal" aria-hidden="true">藏<br />书</div>
+        <div class="note-copy">
+          <p class="eyebrow dark"><span></span>OUR PURPOSE</p>
+          <h2 id="about-title">让经典，回到每个人手中</h2>
+          <p>文硕阁是一个完全公开、免费的公版书分享网站。无需注册，不设会员，没有广告；只愿为古老文字留一盏灯。</p>
+          <div class="principles">
+            <div><b>壹</b><span><strong>自由取阅</strong>EPUB 与 PDF 随心选择</span></div>
+            <div><b>贰</b><span><strong>纯净无扰</strong>无登录、无付费、无广告</span></div>
+            <div><b>叁</b><span><strong>持续整理</strong>让更多公版经典重新流通</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-brand"><span class="brand-seal small">文<br />硕</span><strong>文硕阁<small>传承文明硕果</small></strong></div>
+      <p>本站仅收录并分享公共版权领域作品 · 请读者自行遵守所在地法律</p>
+      <p>© <span id="year"></span> wenshuoge.com</p>
+    </footer>
+
+    <template id="book-card-template">
+      <article class="book-card">
+        <button class="book-object" type="button" aria-label="查看书籍详情">
+          <span class="book-pages"></span>
+          <span class="book-cover">
+            <span class="cover-border"></span>
+            <span class="cover-cloud cloud-a"></span>
+            <span class="cover-cloud cloud-b"></span>
+            <span class="cover-title"></span>
+            <span class="cover-author"></span>
+            <span class="cover-mark">文硕阁</span>
+          </span>
+        </button>
+        <div class="book-info">
+          <h3></h3>
+          <p class="book-author"></p>
+          <div class="book-tags"></div>
+          <div class="book-actions"></div>
+        </div>
+      </article>
+    </template>
+
+    <dialog class="book-dialog" id="book-dialog">
+      <button class="dialog-close" aria-label="关闭">×</button>
+      <div class="dialog-cover-wrap"></div>
+      <div class="dialog-content">
+        <p class="dialog-kicker">文硕阁藏书</p>
+        <h2></h2>
+        <p class="dialog-author"></p>
+        <div class="dialog-tags"></div>
+        <p class="dialog-description"></p>
+        <div class="dialog-actions"></div>
+        <small>公版典籍 · 免费取阅 · 无需登录</small>
+      </div>
+    </dialog>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
