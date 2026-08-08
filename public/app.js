@@ -1,6 +1,6 @@
 const PAGE_SIZE = 16;
 const DETAIL_SHARD_SIZE = 500;
-const CATALOG_REVISION = "037-1";
+const CATALOG_REVISION = "038-1";
 const palettes = [
   ["#7b2e29", "#f0d29d"], ["#31524b", "#e9d5a6"], ["#3d4f61", "#ead3a6"],
   ["#82572e", "#f2ddb4"], ["#553a5a", "#ebd1aa"], ["#294956", "#e2c996"],
