@@ -16,6 +16,14 @@
       "bucket_name": "wenshuoge"
     }
   ],
+  "d1_databases": [
+    {
+      "binding": "METRICS",
+      "database_name": "wenshuoge-metrics",
+      "database_id": "52acb277-13a2-44d3-a435-ed35bd40c0b6",
+      "migrations_dir": "./migrations"
+    }
+  ],
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1

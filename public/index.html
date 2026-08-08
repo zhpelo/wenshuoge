@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#3b1f16" />
     <meta name="description" content="文硕阁——无需注册、完全免费的中文公版电子书分享站，支持 EPUB 与 PDF 格式检索和阅读。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="文硕阁｜免费公版书分享" />
+    <meta property="og:description" content="在线阅读、免费下载与分享中文公版经典。" />
+    <meta property="og:url" content="https://www.wenshuoge.com/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
     <title>文硕阁｜免费公版书分享</title>
@@ -160,7 +164,6 @@
           <h3></h3>
           <p class="book-author"></p>
           <div class="book-tags"></div>
-          <div class="book-actions"></div>
         </div>
       </article>
     </template>
@@ -187,10 +190,59 @@
           <div class="dialog-source-list"></div>
         </div>
         <div class="dialog-actions"></div>
+        <p class="dialog-download-count" aria-live="polite">正在读取下载数据……</p>
+        <details class="share-panel">
+          <summary>分享这本好书</summary>
+          <div class="share-lead">
+            <button class="share-native" type="button">系统分享</button>
+            <button class="share-copy" type="button">复制链接</button>
+          </div>
+          <p>选择平台；若平台不支持网页直发，会复制推荐语并提示你打开对应 App。</p>
+          <div class="share-platforms" aria-label="分享平台"></div>
+        </details>
         <small>公版典籍 · 免费取阅 · 无需登录</small>
       </div>
     </dialog>
 
+    <dialog class="reader-dialog" id="epub-reader">
+      <header class="reader-header">
+        <div>
+          <p>文硕阁在线阅读</p>
+          <h2 class="reader-title">正在启卷……</h2>
+        </div>
+        <div class="reader-settings" aria-label="阅读设置">
+          <button type="button" data-reader-toc="toggle" aria-label="打开章节目录" aria-controls="reader-toc" aria-expanded="false">目录</button>
+          <button type="button" data-reader-font="smaller" aria-label="缩小字号">字−</button>
+          <button type="button" data-reader-font="larger" aria-label="放大字号">字＋</button>
+          <button type="button" data-reader-theme="toggle" aria-label="切换夜间模式">明暗</button>
+          <button class="reader-close" type="button" aria-label="关闭阅读器">×</button>
+        </div>
+      </header>
+      <div class="reader-body">
+        <aside class="reader-toc" id="reader-toc" aria-label="书籍章节目录" hidden>
+          <div class="reader-toc-heading">
+            <strong>章节目录</strong>
+            <button type="button" data-reader-toc="close" aria-label="关闭章节目录">×</button>
+          </div>
+          <nav class="reader-toc-list" aria-live="polite">
+            <p class="reader-toc-status">正在整理目录……</p>
+          </nav>
+        </aside>
+        <div class="reader-stage" id="reader-stage" aria-live="polite">
+          <div class="reader-loading">正在整理篇章，请稍候……</div>
+        </div>
+      </div>
+      <footer class="reader-footer">
+        <button type="button" data-reader-nav="prev">← 上一页</button>
+        <span class="reader-progress">阅读进度将在本浏览器自动保存</span>
+        <button type="button" data-reader-nav="next">下一页 →</button>
+      </footer>
+    </dialog>
+
+    <div class="site-toast" id="site-toast" role="status" aria-live="polite" hidden></div>
+
+    <script src="/vendor/epubjs/jszip.min.js" defer></script>
+    <script src="/vendor/epubjs/epub.min.js" defer></script>
     <script src="/app.js" type="module"></script>
   </body>
 </html>
