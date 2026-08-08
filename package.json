@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "index": "node scripts/build-index.mjs",
+    "audit": "node scripts/audit-metadata.mjs",
     "dev": "npm run index && node node_modules/wrangler/bin/wrangler.js dev --local",
     "typecheck": "node node_modules/typescript/bin/tsc --noEmit",
-    "check": "npm run index && npm run typecheck && node node_modules/wrangler/bin/wrangler.js deploy --dry-run --outdir dist",
+    "check": "npm run index && npm run audit && npm run typecheck && node node_modules/wrangler/bin/wrangler.js deploy --dry-run --outdir dist",
     "deploy": "npm run index && node node_modules/wrangler/bin/wrangler.js deploy",
     "upload:books": "node scripts/upload-r2.mjs"
   },

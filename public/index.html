@@ -18,6 +18,7 @@
       </a>
       <nav aria-label="主导航">
         <a href="#library">藏书检索</a>
+        <a href="#categories">分类浏览</a>
         <a href="#about">关于本站</a>
       </nav>
       <span class="public-badge">公开 · 免费 · 无需登录</span>
@@ -63,7 +64,7 @@
 
         <div class="hero-stats" aria-label="书库统计">
           <div><strong id="hero-total">—</strong><span>册公版藏书</span></div>
-          <div><strong>2</strong><span>种通用格式</span></div>
+          <div><strong id="reviewed-total">—</strong><span>册资料已核验</span></div>
           <div><strong>0</strong><span>注册与付费</span></div>
         </div>
       </section>
@@ -91,7 +92,20 @@
           </div>
         </div>
 
-        <div class="result-meta" aria-live="polite">
+        <section class="category-section" id="categories" aria-labelledby="category-title">
+          <div class="category-heading">
+            <div>
+              <p class="eyebrow dark"><span></span>BROWSE BY CATEGORY</p>
+              <h3 id="category-title">按分类入阁</h3>
+            </div>
+            <p>分类由原书主题、书名和简介自动归纳；已经互联网核验的书目会优先采用人工分类。</p>
+          </div>
+          <div class="category-browser" id="category-browser" aria-label="书籍分类" aria-live="polite">
+            <div class="category-placeholder"></div><div class="category-placeholder"></div><div class="category-placeholder"></div>
+          </div>
+        </section>
+
+        <div class="result-meta" id="catalog-results" aria-live="polite">
           <p id="result-count">正在清点藏书……</p>
           <button id="clear-search" hidden>清除检索</button>
         </div>
@@ -155,11 +169,23 @@
       <button class="dialog-close" aria-label="关闭">×</button>
       <div class="dialog-cover-wrap"></div>
       <div class="dialog-content">
-        <p class="dialog-kicker">文硕阁藏书</p>
+        <div class="dialog-heading-row">
+          <p class="dialog-kicker">文硕阁藏书</p>
+          <span class="dialog-status">自动整理</span>
+        </div>
         <h2></h2>
         <p class="dialog-author"></p>
+        <div class="dialog-facts" aria-label="书籍年代与分类">
+          <span class="dialog-period"></span>
+          <span class="dialog-category"></span>
+        </div>
         <div class="dialog-tags"></div>
+        <p class="dialog-author-info" hidden></p>
         <p class="dialog-description"></p>
+        <div class="dialog-sources" hidden>
+          <strong>资料来源</strong>
+          <div class="dialog-source-list"></div>
+        </div>
         <div class="dialog-actions"></div>
         <small>公版典籍 · 免费取阅 · 无需登录</small>
       </div>

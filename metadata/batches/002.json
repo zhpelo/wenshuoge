@@ -1,0 +1,174 @@
+{
+  "batch": "002",
+  "updatedAt": "2026-08-08",
+  "note": "第二批补齐缺失主题书目，侧重清代史地、金石书画、器物与生活技艺文献。",
+  "books": {
+    "4309": {
+      "author": "佚名",
+      "authorInfo": "原始编纂者不详，今本由台湾银行经济研究室整理，收入台湾文献丛刊系统。",
+      "period": "清代·乾隆元年（1736）以后汇编",
+      "era": "清代",
+      "category": "史地文献",
+      "tags": ["台湾史", "赋役制度", "财政史", "户籍", "清代档案"],
+      "description": "清代台湾府赋税与徭役资料汇编，分载人丁、田园、盐课、杂税及厅县征收数额等事项。书中保存康熙年间编审增丁和乾隆元年以后丁银定例，是研究清代台湾人口、土地、财政与基层行政的重要史料。",
+      "sources": [
+        {"title": "国史馆台湾文献馆：现存出版品目录", "url": "https://ws.th.gov.tw/Download.ashx?n=YzU5MGU0NTQwNDc0NmIwNWFiY2I5YjgwNGExM2QwY2IucGRm&u=LzAwMi9USC82L3JlbGZpbGUvNzIvODUyMi84ZThkMmMxZi02YjUzLTRkYjAtYjM2NC0wYWU1NWU0Y2UxZDcucGRm"}
+      ],
+      "reviewed": true
+    },
+    "4444": {
+      "author": "顾祖禹",
+      "authorInfo": "顾祖禹（1631—1692），字景范，自号宛溪子，清初历史地理学家，长期以遗民身份从事舆地研究。",
+      "period": "清初·顺治十六年（1659）始撰，康熙年间成书",
+      "era": "清代",
+      "category": "史地文献",
+      "tags": ["历史地理", "军事地理", "全国总志", "疆域沿革", "山川形势"],
+      "description": "清初历史地理巨著，共一百三十卷，并附舆地图表。全书以明末行政区划为纲，综合正史、方志、野史和实地考察，追述历代州域沿革、山川险要、交通水利与战争得失，尤其重视地理形势对攻守成败的影响。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：读史方舆纪要", "url": "https://ctext.org/wiki.pl?if=gb&res=569304"},
+        {"title": "光明日报：读史方舆纪要", "url": "https://www.gmw.cn/01gmrb/2010-02/08/content_1051998.htm"}
+      ],
+      "reviewed": true
+    },
+    "4516": {
+      "author": "冯云鹓",
+      "authorInfo": "冯云鹓，清代崇川学者、辑佚家，编有汇集孔门弟子资料的《圣门十六子书》。",
+      "period": "清代·道光年间刊行",
+      "era": "清代",
+      "category": "经学礼制",
+      "tags": ["子路", "孔门弟子", "儒学", "人物传记", "年谱辑佚"],
+      "description": "辑录孔子弟子仲由（子路）言行与后世纪念资料的七卷本专书。内容包括生卒与仕宦年表、从政和问学事迹、历代祠庙墓址以及仲氏宗子世系，材料取自《论语》《史记》《孔子家语》及多种地方志、家谱。",
+      "sources": [
+        {"title": "识典古籍：仲子书", "url": "https://www.shidianguji.com/mid-page/7555621918658871305"},
+        {"title": "中国谱牒库年谱编目录：仲子年表", "url": "https://www.toho-shoten.co.jp/export/sites/default/er07/list/1000nenpu.pdf"}
+      ],
+      "reviewed": true
+    },
+    "4601": {
+      "author": "章太炎",
+      "authorInfo": "章太炎（1869—1936），名炳麟，近代思想家、革命家和国学大师，在文字学、经学、哲学与史学等领域均有重要著述。",
+      "period": "清末·宣统二年（1910）初版",
+      "era": "近现代",
+      "category": "近现代人文",
+      "tags": ["国学", "文字学", "文学理论", "诸子学", "近代学术"],
+      "description": "章太炎近代国学代表作，分上、中、下三卷，分别讨论小学、文学与诸子学。书中考辨语言文字、学术源流、儒道诸家和文学观念，既总结传统朴学方法，也体现清末民初重建中国学术体系的努力。",
+      "sources": [
+        {"title": "中国大百科全书：国故论衡", "url": "https://www.zgbk.com/ecph/words?ID=19577&SiteID=1&SubID=44352"},
+        {"title": "商务印书馆：国故论衡", "url": "https://www.cp.com.cn/book/bdd232e9-e.html"}
+      ],
+      "reviewed": true
+    },
+    "4626": {
+      "author": "李光暎",
+      "authorInfo": "李光暎（？—1736），字子中，号叠庵，自署观妙主人，清代嘉兴金石学家。",
+      "period": "清代·雍正七年（1729）刊行",
+      "era": "清代",
+      "category": "艺术鉴藏",
+      "tags": ["金石学", "碑刻", "书法品评", "著录", "清代考据"],
+      "description": "清代金石著录与书法品评专书，十六卷，汇考家藏及前人记录的金石文字六百余种。作者广采金石书、地志、文集和说部，逐条注明出处，内容以碑刻书迹的源流与艺术评价为重。",
+      "sources": [
+        {"title": "书格：观妙斋藏金石文考略", "url": "https://old.shuge.org/ebook/jin-shi-wen-kao-lve/"},
+        {"title": "中国哲学书电子化计划：李光暎", "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=386372"}
+      ],
+      "reviewed": true
+    },
+    "4661": {
+      "author": "吴恭亨",
+      "authorInfo": "吴恭亨（1857—1937），字悔晦，号岩村，湖南慈利人，近代诗人与楹联评论家。",
+      "period": "民国十年（1921）刊行",
+      "era": "近现代",
+      "category": "诗词文集",
+      "tags": ["楹联", "联话", "文学批评", "社会风俗", "民国文学"],
+      "description": "近代楹联资料与评论专集，共十四卷，按题署、庆贺、哀挽、杂缀、谐谑等门类收录作者自作及所见名联，并随文评点其格律、用典和风格。书中还保存大量晚清民初人物、地方社会与城市生活材料。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：对联话", "url": "https://ctext.org/wiki.pl?if=gb&remap=gb&res=218290"},
+        {"title": "中国楹联资料：吴恭亨《对联话》", "url": "https://www.wcai.net/couplet/duiliantong01.htm"}
+      ],
+      "reviewed": true
+    },
+    "4668": {
+      "author": "赵之谦",
+      "authorInfo": "赵之谦（1829—1884），字益甫，后改字撝叔，号悲盦等，晚清书画家、篆刻家和金石学家。",
+      "period": "清代·光绪六年（1880）首刻",
+      "era": "清代",
+      "category": "艺术鉴藏",
+      "tags": ["鼻烟", "鼻烟壶", "器物史", "中外交流", "工艺美术"],
+      "description": "晚清赵之谦考述鼻烟与鼻烟壶的短篇谱录，讨论鼻烟传入中国的说法，并记录鼻烟的色、味、气以及容器材质和制作掌故。它兼具器物鉴赏与中外物质文化交流史价值。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：勇卢闲诘", "url": "https://ctext.org/wiki.pl?chapter=812449&if=gb"},
+        {"title": "故宫博物院：赵之谦", "url": "https://www.dpm.org.cn/lemmas/240438.html"}
+      ],
+      "reviewed": true
+    },
+    "4677": {
+      "author": "叶廷珪",
+      "authorInfo": "叶廷珪，南宋瓯宁人，官员、文献学者，著有《海录碎事》等书，并长期留意香药与域外物产。",
+      "period": "南宋",
+      "era": "宋代",
+      "category": "科学技艺",
+      "tags": ["香文化", "香料", "物产", "宋代谱录", "域外贸易"],
+      "description": "南宋香料谱录，一卷，分条记录五十余种名香的名称、异名、产地、形状、功用、传入故事与合成方法。书中相当一部分香料来自域外，是研究宋代香文化、药物知识和海陆贸易的资料。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：名香谱", "url": "https://ctext.org/wiki.pl?if=gb&res=849417"},
+        {"title": "中国高等教育学术期刊：宋代香谱研究", "url": "https://cjournal.hep.com.cn/1671-055X/CN/PDF/10.16595/j.1671-055X.2025.04.007"}
+      ],
+      "reviewed": true
+    },
+    "4680": {
+      "author": "虞荔（旧题）",
+      "authorInfo": "虞荔（约503—561），字山披，南朝梁、陈间官员和学者；今本虽旧题虞荔撰，但包含其身后史事，应有后人增补。",
+      "period": "南朝陈以后编成，后世续有增补",
+      "era": "魏晋南北朝",
+      "category": "艺术鉴藏",
+      "tags": ["青铜器", "鼎", "器物谱录", "铭文", "版本考辨"],
+      "description": "记述历代帝王与臣下铸鼎传说、形制、材质、名称和铭文的早期器物谱录。今本一卷，旧题南朝虞荔撰，但书中出现陈宣帝等作者身后内容，显示文本在流传过程中经过增补，使用时需兼顾其器物史价值与版本真伪问题。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：鼎录", "url": "https://ctext.org/dictionary.pl?char=%E9%BC%8E%E9%8C%84&if=gb&remap=gb"},
+        {"title": "中国社会科学网：谱录类文献的科学文化价值", "url": "https://www.cssn.cn/skgz/bwyc/202604/t20260409_5979775.shtml"}
+      ],
+      "reviewed": true
+    },
+    "4684": {
+      "author": "费著（旧题）",
+      "authorInfo": "费著，旧题元代四川广都人，地方文献学者；现代研究认为《笺纸谱》可能主要承袭宋代成都地方文献，作者归属尚有争议。",
+      "period": "旧题元代；现有研究认为文本源自宋代文献",
+      "era": "元代",
+      "category": "科学技艺",
+      "tags": ["造纸术", "蜀纸", "手工业史", "文房用品", "版本考辨"],
+      "description": "系统记录唐宋以来四川笺纸生产、加工、品种与名工的谱录，尤其涉及广都、双流和成都的蜀纸传统。旧本题元代费著撰，但现代研究依据书中官职、政区和文字材料提出宋代文献来源说，因此本书既是造纸史料，也有重要的版本考辨价值。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：笺纸谱", "url": "https://ctext.org/wiki.pl?if=gb&res=567465"},
+        {"title": "中华文化论坛：《岁华纪丽谱》《笺纸谱》《蜀锦谱》作者考", "url": "https://zhwl.cbpt.cnki.net/portal/journal/portal/client/paper/7fe0206de08287c48af435dcad2066c3"}
+      ],
+      "reviewed": true
+    },
+    "4689": {
+      "author": "冒广生",
+      "authorInfo": "冒广生（1873—1959），字鹤亭，号疚斋，江苏如皋人，近现代学者、词人，精研经史、词学与文物掌故。",
+      "period": "民国六年（1917）刻本",
+      "era": "近现代",
+      "category": "艺术鉴藏",
+      "tags": ["哥窑", "宋瓷", "陶瓷史", "文献考证", "古玩鉴赏"],
+      "description": "冒广生汇集历代有关哥窑及宋代名窑的文献记载，讨论柴、汝、官、哥、定等窑口的产地、釉色、纹片、胎足与鉴别标准。篇幅虽短，却反映了民国初年以古籍资料考察宋瓷的传统鉴藏方法。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：疚斋小品哥窑谱", "url": "https://ctext.org/wiki.pl?chapter=431121&if=gb&remap=gb"},
+        {"title": "上海博物馆藏冒广生家属捐赠印选介绍", "url": "https://www.sohu.com/a/749911632_121124384"}
+      ],
+      "reviewed": true
+    },
+    "4693": {
+      "author": "袁宏道",
+      "authorInfo": "袁宏道（1568—1610），字中郎，号石公，明代文学家，公安派代表人物，主张“独抒性灵，不拘格套”。",
+      "period": "明代·万历二十七年（1599）",
+      "era": "明代",
+      "category": "艺术鉴藏",
+      "tags": ["插花", "花艺", "生活美学", "瓶花", "明代园艺"],
+      "description": "明代插花艺术专著，以花目、品第、器具、择水、洗沐、清赏等条目讨论瓶花选择、养护、陈设与审美。书中强调天然参差和文人意趣，对中国插花理论及后来日本花道中的“宏道流”产生了影响。",
+      "sources": [
+        {"title": "中国大百科全书：瓶史", "url": "https://www.zgbk.com/ecph/words?ID=400794&SiteID=1&Type=bkzyb"},
+        {"title": "故宫博物院研究资料：袁宏道《瓶史》", "url": "https://www.dpm.org.cn/Uploads/File/2018/06/04/u5b1538ef83a76.pdf"}
+      ],
+      "reviewed": true
+    }
+  }
+}

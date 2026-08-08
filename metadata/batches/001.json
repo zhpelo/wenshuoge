@@ -1,0 +1,172 @@
+{
+  "batch": "001",
+  "updatedAt": "2026-08-08",
+  "note": "首批补齐 EPUB 中缺失主题标签的书目，并核验作者、年代、分类与简介。",
+  "books": {
+    "14": {
+      "author": "宋慈",
+      "authorInfo": "宋慈（1186—1249），字惠父，南宋官员，以长期司法实践和法医学著述著称。",
+      "period": "南宋·淳祐七年（1247）",
+      "era": "宋代",
+      "category": "医学养生",
+      "tags": ["法医学", "司法检验", "验伤验尸", "宋代医学", "法律史"],
+      "description": "南宋宋慈总结司法检验经验编成的法医学专著，共四卷，系统讨论验伤、验尸、辨伤、检骨以及办案检验程序。它既保存了中国古代法医实践的重要材料，也对后世中外法医学的发展产生了持续影响。",
+      "sources": [
+        {"title": "中国大百科全书：洗冤集录", "url": "https://www.zgbk.com/ecph/words?ID=23505&SiteID=1&Type=bkzyb"},
+        {"title": "中国哲学书电子化计划：洗冤录", "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=904716"}
+      ],
+      "reviewed": true
+    },
+    "18": {
+      "author": "简·奥斯汀",
+      "authorInfo": "简·奥斯汀（1775—1817），英国小说家，擅长以机智、克制的叙述观察婚姻、阶层与女性处境。",
+      "period": "英国·1813年初版",
+      "era": "外国近代",
+      "category": "外国文学",
+      "tags": ["英国文学", "长篇小说", "爱情", "婚姻", "社会风俗"],
+      "description": "小说围绕班纳特一家五个女儿的婚姻前景展开，以伊丽莎白与达西从误解、偏见到彼此理解的关系为主线，讽刺乡绅社会的阶层意识、婚姻算计和性别规范，并肯定建立在尊重与爱情之上的选择。",
+      "sources": [
+        {"title": "Jane Austen's House：Pride and Prejudice", "url": "https://janeaustens.house/jane-austen/novels/pride-and-prejudice/"}
+      ],
+      "reviewed": true
+    },
+    "19": {
+      "author": "孙武",
+      "authorInfo": "孙武，字长卿，春秋末期军事家，传统上被视为《孙子兵法》的主要作者。",
+      "period": "春秋末期（约公元前5世纪）",
+      "era": "先秦",
+      "category": "诸子哲思",
+      "tags": ["兵家", "军事思想", "战略", "战争论", "先秦典籍"],
+      "description": "中国古代兵家经典，今本十三篇，从计、势、虚实、军争等方面讨论战争决策与组织原则。全书强调审势、知彼知己和以较小代价取得胜利，对中国及世界军事思想影响深远。",
+      "sources": [
+        {"title": "清华大学出版社：《孙子兵法》内容简介", "url": "https://www.tup.tsinghua.edu.cn/booksCenter/bookpreface?id=08957001"}
+      ],
+      "reviewed": true
+    },
+    "1214": {
+      "author": "斯蒂芬·茨威格",
+      "authorInfo": "斯蒂芬·茨威格（1881—1942），奥地利小说家、传记作家，以细腻描写人物心理见长。",
+      "period": "奥地利·1904年结集初版",
+      "era": "外国近代",
+      "category": "外国文学",
+      "tags": ["奥地利文学", "中篇小说", "宗教", "艺术", "心理描写"],
+      "description": "茨威格早期中篇小说，原名《Die Wunder des Lebens》。故事以1566年的安特卫普为背景，一位老画家邀请犹太少女艾斯特充当圣母像模特，在艺术、宗教冲突与彼此依恋之间展开一段温柔而悲剧性的生命体验。作品于1904年收入《艾丽卡·埃瓦尔德之恋》小说集。",
+      "sources": [
+        {"title": "Stefan Zweig digital：1904年生平与出版记录", "url": "https://gams.uni-graz.at/o%3Aszd.lebenskalender"},
+        {"title": "重庆大学出版社：茨威格中短篇小说经典", "url": "https://www.sinobook.com.cn/B2C/SCRP/bookdetail.cfm?iBookNo=622871"}
+      ],
+      "reviewed": true
+    },
+    "3541": {
+      "author": "胡松",
+      "authorInfo": "胡松（1490—1572），字茂卿，号承庵，明代官员、文人，官至工部尚书。",
+      "period": "明代·嘉靖时期",
+      "era": "明代",
+      "category": "诗词文集",
+      "tags": ["明代文学", "诗文集", "别集", "胡松", "嘉靖"],
+      "description": "明代胡松的个人诗文集，由胡廷杰等编次，汇集其诗歌与文章，是了解作者文学创作、交游以及嘉靖时期士大夫思想与政事的重要文献。",
+      "sources": [
+        {"title": "维基文库：承庵先生集", "url": "https://zh.wikisource.org/zh-hans/%E6%89%BF%E8%8F%B4%E5%85%88%E7%94%9F%E9%9B%86"},
+        {"title": "中国历代人物传记资料库：胡松", "url": "https://cnkgraph.com/People/50870"}
+      ],
+      "reviewed": true
+    },
+    "3560": {
+      "author": "崔桐",
+      "authorInfo": "崔桐（1479—？），字来凤，号东洲，明代官员、文学家，正德年间进士。",
+      "period": "明代·嘉靖年间（1550—1555年已有刊本）",
+      "era": "明代",
+      "category": "诗词文集",
+      "tags": ["明代文学", "诗文别集", "诗词", "散文", "嘉靖刻本"],
+      "description": "明代崔桐的诗文别集，正集二十卷、续集十一卷，兼收诗、词、散文与杂著。现存版本包含嘉靖二十九年序和嘉靖三十四年跋，可见其在16世纪中叶已编刻流传。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：崔东洲集", "url": "https://ctext.org/wiki.pl?if=gb&res=290584"},
+        {"title": "中国历代人物传记资料库：崔桐", "url": "https://open.cnkgraph.com/People/%E6%98%8E/%E5%B4%94%E6%A1%90/45192"}
+      ],
+      "reviewed": true
+    },
+    "3726": {
+      "author": "吴还初（吴迁）",
+      "authorInfo": "吴还初即吴迁，明代通俗文学作者，其生平仍有待进一步考证。",
+      "period": "明代·万历三十三年（1605）已有序",
+      "era": "明代",
+      "category": "小说",
+      "tags": ["公案小说", "短篇小说集", "司法故事", "明代小说", "社会史"],
+      "description": "明代短篇公案小说集，全称《新刻郭青螺六省听讼录新民公案》，分欺昧、人命、谋害、劫盗等八类，以案件、诉状和判语组织故事。它兼具通俗叙事价值，也是观察明代司法想象与社会生活的材料。",
+      "sources": [
+        {"title": "维基文库：新民公案", "url": "https://zh.wikisource.org/zh-hans/%E6%96%B0%E6%B0%91%E5%85%AC%E6%A1%88"},
+        {"title": "华东师范大学学报：吴还初身份考辨", "url": "https://xbzs.ecnu.edu.cn/CN/article/downloadArticleFile.do?attachType=PDF&id=11711"}
+      ],
+      "reviewed": true
+    },
+    "3880": {
+      "author": "陶渊明",
+      "authorInfo": "陶渊明（约365—427），又名潜，字元亮，东晋诗人、辞赋家，以田园诗和《桃花源记》等作品著称。",
+      "period": "东晋（4—5世纪作品，后世编集）",
+      "era": "魏晋南北朝",
+      "category": "诗词文集",
+      "tags": ["东晋文学", "田园诗", "诗文集", "辞赋", "陶渊明"],
+      "description": "陶渊明诗文合集，收录田园诗、咏怀诗、辞赋、传记与祭文等作品。其质朴自然的语言、归隐田园的生命选择和对理想社会的想象，深刻影响了后世中国文学。现行各本多源自梁代萧统以来的编集系统。",
+      "sources": [
+        {"title": "国家图书馆出版社：陶渊明集", "url": "https://www.nlcpress.com/ProductView.aspx?Id=10336"},
+        {"title": "书格：陶渊明集", "url": "https://www.shuge.org/view/tao_yuanming_ji/"}
+      ],
+      "reviewed": true
+    },
+    "3951": {
+      "author": "李光地等奉敕编纂",
+      "authorInfo": "李光地（1642—1718），字晋卿，号榕村，清代官员、学者；本书为奉康熙帝敕命主持编纂的集体著作。",
+      "period": "清代·康熙五十四年（1715）",
+      "era": "清代",
+      "category": "史地文献",
+      "tags": ["月令", "岁时", "典章制度", "物候", "清代官修"],
+      "description": "清康熙年间奉敕编成的岁时月令类书，二十四卷，另有图说一卷。全书按岁令、四时、十二月、闰月、夜令与时刻等门类，汇录天道、政典、民用、物候和占验资料，并标注出处，反映传统社会对时间秩序与日常制度的系统整理。",
+      "sources": [
+        {"title": "数位典藏与数位学习联合目录：御定月令辑要", "url": "https://catalog.digitalarchives.tw/item/00/12/72/99.html"},
+        {"title": "哥伦比亚大学东亚图书馆书目：御定月令辑要", "url": "https://www1.columbia.edu/sec/cu/lso/tocdata/11261863/CU02795612/Entire_set.pdf"}
+      ],
+      "reviewed": true
+    },
+    "3986": {
+      "author": "李好文",
+      "authorInfo": "李好文，字惟中，自号河滨渔者，元代官员、学者，曾任陕西行台治书侍御史。",
+      "period": "元代·至正二至四年（1342—1344）",
+      "era": "元代",
+      "category": "史地文献",
+      "tags": ["历史地理", "长安", "舆图", "地方志", "水利"],
+      "description": "元代长安历史地理图志，共三卷、图二十二幅，分别考述汉唐长安城、宫苑、古迹陵墓和关中泾渠水利。图文结合，既可用于城市与宫城制度研究，也保存了元代关中地理和灌溉资料。",
+      "sources": [
+        {"title": "中国哲学书电子化计划：长安志图", "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=199778"},
+        {"title": "中国人民大学清史研究所：元代李好文《长安志图》", "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_lzjj/xqzmddlyj/1f07898e41a842788b550d45b8002107.htm"}
+      ],
+      "reviewed": true
+    },
+    "3991": {
+      "author": "王石鹏",
+      "authorInfo": "王石鹏，字箴盘，号了庵主人，清末台湾文人，以启蒙韵文介绍台湾地理与历史。",
+      "period": "清末·光绪二十六年（1900）",
+      "era": "近现代",
+      "category": "史地文献",
+      "tags": ["台湾史", "台湾地理", "蒙学", "三字经体", "乡土教育"],
+      "description": "以三字一句的韵文介绍台湾位置、名称沿革、族群、山川、物产和经济，并配有简要注释。作者把地理知识与历史叙述结合，旨在为儿童和普通读者提供易记的台湾乡土启蒙读物。",
+      "sources": [
+        {"title": "台湾文学辞典资料库：台湾三字经", "url": "https://db.nmtl.gov.tw/site2/dictionary?id=Dictionary01136"},
+        {"title": "维基文库：台湾三字经", "url": "https://zh.wikisource.org/zh-hans/%E8%87%BA%E7%81%A3%E4%B8%89%E5%AD%97%E7%B6%93"}
+      ],
+      "reviewed": true
+    },
+    "4207": {
+      "author": "陈沂",
+      "authorInfo": "陈沂（1469—1538），字宗鲁，号石亭，明代官员、文学家，熟悉金陵掌故。",
+      "period": "明代·嘉靖十六至十七年（约1537—1538）",
+      "era": "明代",
+      "category": "史地文献",
+      "tags": ["地方志", "金陵", "名胜", "寺院", "明代文献"],
+      "description": "记述南京城南献花岩及其周边寺院、山林、古迹与游览掌故的小型地方志。陈沂晚年游历其地后撰写，文字兼具地理记录和山水游记意味，为研究明代南京名胜与佛教空间提供了材料。",
+      "sources": [
+        {"title": "扬子晚报：陈沂与《献花岩志》", "url": "https://wap.yzwb.net/wap/news/4838413.html"}
+      ],
+      "reviewed": true
+    }
+  }
+}
