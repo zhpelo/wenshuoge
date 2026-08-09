@@ -1,0 +1,189 @@
+{
+  "batch": "052",
+  "updatedAt": "2026-08-08",
+  "note": "第五十二批顺序核验编号619至630的12部莎士比亚戏剧，全部补入朱生豪译者责任、英国文艺复兴原作年代、早期演出与刊本信息，并统一归入近现代戏曲。重点辨明《驯悍记》与1594年《一驯悍妇》的文本关系、《亨利五世》1600年短四开本与1623年完整对开本的差异；同时依据当代莎学标注《雅典的泰门》可能由托马斯·米德尔顿合作、《亨利八世》可能由约翰·弗莱彻合作的署名边界。12册电子本均含人物表与完整幕次，未发现逐字重复。",
+  "books": {
+    "619": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国文艺复兴时期剧作家、诗人。《驯悍记》属于其早期喜剧。朱生豪（1912—1944）是中国莎剧翻译家；书库正文的人名、台词与其译本相合。",
+      "period": "原作约1590年代初、通常认为1592年前后已写成；1623年《第一对开本》首次刊行，另有1594年相关异本《一驯悍妇》",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "驯悍记", "The Taming of the Shrew", "英国文艺复兴", "早期喜剧", "1590年代", "1623年初刊", "婚姻与权力", "序幕及五幕"],
+      "description": "酒鬼斯赖被贵族捉弄，误以为自己是老爷，随后观看一出“戏中戏”：彼特鲁乔为嫁妆追求性情强硬的凯瑟丽娜，并以饥饿、失眠和语言控制等方式迫使她顺从；妹妹比恩卡的追求线则以乔装和身份错置并行。作品今日常因性别权力与表演性受到重新讨论。书库当前含人物表、序幕及五幕正文，结构完整、无逐字重幕；它对应1623年对开本系统，不应与1594年题为《一驯悍妇》的相关异本混同。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《驯悍记》早期断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《驯悍记》1623年初刊及1594年相关异本", "url": "https://www.folger.edu/explore/shakespeares-works/the-taming-of-the-shrew/an-introduction-to-this-text/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "620": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《辛白林》是其晚期传奇剧之一，混合历史、爱情、喜剧和悲剧因素。书库中文本经正文用语核为朱生豪译本。",
+      "period": "原作约1609—1610年写成，1611年已有观剧记录；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "辛白林", "Cymbeline", "英国文艺复兴", "传奇剧", "1609至1610年", "1623年初刊", "伊摩琴", "宽恕与团圆"],
+      "description": "不列颠王辛白林之女伊摩琴违抗父命，秘密嫁给出身较低的波塞摩斯。反派伊阿古摩以赌局诱使丈夫误信她不贞，王后又图谋王位；伊摩琴乔装出走，与幼年失散的两位王子相逢。罗马与不列颠战争、身份发现和婚姻误会最终一并化解。书库当前含人物表和五幕正文，篇章连续、无逐字重幕，完整保存朱生豪译本主体；作品年代由“待考”订为1609至1610年前后。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《辛白林》1610年前后断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《辛白林》1609—1610年创作、1611年演出记录及1623年初刊", "url": "https://folgerpedia.folger.edu/Cymbeline"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "621": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《一报还一报》常被归入“问题剧”，借维也纳的司法危机追问权力、欲望和宽恕。书库中文本为朱生豪译。",
+      "period": "原作约1604年写成，1604年12月26日有宫廷演出记录；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "一报还一报", "Measure for Measure", "英国文艺复兴", "问题剧", "1604年", "1623年初刊", "法律与欲望", "权力伪善"],
+      "description": "维也纳公爵假称离城，把权力交给以严苛著称的安哲鲁，自己则乔装修士观察。安哲鲁判克劳狄奥死刑，却以赦命为条件胁迫其姐姐依莎贝拉；公爵用“换床计”和“换头计”揭穿伪善，再以公开审判收束局面。剧本并未给正义、婚姻和宽恕提供毫无疑问的答案。书库当前人物表与五幕正文齐全、无逐字重幕，译文核为朱生豪本，原作年代和初刊信息已补正。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《一报还一报》1604年创作与演出", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《一报还一报》1623年《第一对开本》文本", "url": "https://www.folger.edu/explore/shakespeares-works/measure-for-measure/an-introduction-to-this-text/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "622": {
+      "author": "威廉·莎士比亚、托马斯·米德尔顿（合作说）；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（1564—1616）与托马斯·米德尔顿（Thomas Middleton，1580—1627）均为英国剧作家。当代归属研究常把《雅典的泰门》视为二人合作，但仍有学者主张莎士比亚独作，故作者栏明确保留“合作说”。朱生豪译本沿传统只题莎士比亚。",
+      "period": "原作约1604—1606年写成，莎士比亚在世时无可靠演出记录；1623年《第一对开本》首次刊行，合作归属仍有争议",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "托马斯·米德尔顿", "朱生豪", "雅典的泰门", "Timon of Athens", "英国文艺复兴", "1604至1606年", "合作剧争议", "金钱与友谊", "厌世悲剧"],
+      "description": "雅典富豪泰门把财富不断赠给自称朋友的人，债务到期后却无人援手。他用清水宴羞辱宾客，弃城隐居，又意外掘得黄金；昔日依附者随即再来，泰门则把金钱交给被放逐的将军艾西巴第斯，鼓动其攻击雅典，最终在孤绝中死去。作品从慷慨滑向厌世，集中审视信用、友谊和金钱。书库当前人物表和五幕正文齐全、无逐字重幕；署名补出米德尔顿合作说，同时保留学界争议。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：《雅典的泰门》1604—1606年断代及米德尔顿合作说", "url": "https://www.rsc.org.uk/timon-of-athens/about-the-play/dates-and-sources"},
+        {"title": "福尔杰莎士比亚图书馆：《雅典的泰门》作者归属争议", "url": "https://www.folger.edu/explore/shakespeares-works/timon-of-athens/authorship-of-timon-of-athens/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "623": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《终成眷属》常被视为“问题剧”，女主人公海丽娜主动争取婚姻的策略使作品兼有喜剧结局与伦理疑问。书库中文本为朱生豪译。",
+      "period": "原作通常定于1603—1606年，确切年份无定论；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "终成眷属", "All's Well That Ends Well", "英国文艺复兴", "问题剧", "1603至1606年", "1623年初刊", "海丽娜", "婚姻与阶级"],
+      "description": "名医之女海丽娜治愈法国国王，获得自择丈夫的赏赐，却被所选的伯爵勃特拉姆拒绝。勃特拉姆远赴意大利，声称只有海丽娜取得他的戒指并怀上他的孩子才承认婚姻；海丽娜借狄安娜协助完成条件。结尾形式上“终成眷属”，却保留爱情、阶级、同意与欺骗的复杂问题。书库当前含人物表和五幕正文，结构连续、无逐字重幕，原作日期以1603至1606年的审慎范围标注。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《终成眷属》1603—1606年断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《终成眷属》1623年《第一对开本》初刊", "url": "https://www.folger.edu/explore/shakespeares-works/alls-well-that-ends-well/an-introduction-to-this-text/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "624": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《爱的徒劳》原题 Love's Labour's Lost，以密集双关、宫廷机智和反浪漫喜剧结构著称。书库中文本为朱生豪译。",
+      "period": "原作约1595—1596年写成；1598年第一四开本初刊，是最早在标题页印出莎士比亚姓名的剧作之一",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "爱的徒劳", "Love's Labour's Lost", "英国文艺复兴", "早期喜剧", "1595至1596年", "1598年初刊", "宫廷机智", "开放式结局"],
+      "description": "那瓦国王与三名廷臣发誓三年禁欲苦读，法国公主及三位女伴到访后，四人立刻各自坠入爱河，并试图用化装、情书和浮夸诗句掩饰违誓。女性反复识破表演；法王死讯突然打断庆典，公主要求求爱者经历一年考验，喜剧没有以即时婚礼收场。书库当前人物表与五幕正文完整、无逐字重幕；年代由待考补为约1595至1596年，初刊落实到1598年四开本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《爱的徒劳》1595—1596年断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "Shakespeare Documented：《爱的徒劳》1598年第一版与莎士比亚署名", "url": "https://shakespearedocumented.folger.edu/plays-poetry/loves-labors-lost"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "625": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《暴风雨》属于其晚期传奇剧，以荒岛、魔法、殖民权力、宽恕和放弃艺术为核心。书库所收为朱生豪译本。",
+      "period": "原作约1611年写成，1611年11月1日有宫廷演出记录；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "暴风雨", "The Tempest", "英国文艺复兴", "传奇剧", "1611年", "1623年初刊", "普洛斯彼罗", "魔法与宽恕"],
+      "description": "被篡位的米兰公爵普洛斯彼罗与女儿米兰达流落荒岛十二年。他驱使精灵爱丽儿制造海难，把仇敌引到岛上，以幻象分别考验他们；同时，奴役中的凯列班试图反抗，米兰达与那不勒斯王子相爱。普洛斯彼罗最后选择宽恕、放弃魔法并释放爱丽儿。书库当前人物表及五幕正文完整、无逐字重幕，译文核为朱生豪本；资料同时避免把“宽恕”当作唯一解读，保留作品的殖民与权力问题。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《暴风雨》1611年创作、演出", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《暴风雨》1623年《第一对开本》文本", "url": "https://www.folger.edu/explore/shakespeares-works/the-tempest/an-introduction-to-this-text/"},
+        {"title": "维基文库：朱生豪译《暴风雨》全文", "url": "https://zh.wikisource.org/zh-hans/%E6%9A%B4%E9%A2%A8%E9%9B%A8"}
+      ],
+      "reviewed": true
+    },
+    "626": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《安东尼与克莉奥佩特拉》据普鲁塔克传记材料改写罗马从共和向帝国转折中的政治与爱情。书库中文本为朱生豪译。",
+      "period": "原作约1606—1607年写成，1608年5月20日登记出版但未见当时印本；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "安东尼与克莉奥佩特拉", "Antony and Cleopatra", "英国文艺复兴", "罗马悲剧", "1606至1607年", "1623年初刊", "罗马与埃及", "爱情与帝国"],
+      "description": "罗马三头之一安东尼在政治责任、军事联盟与埃及女王克莉奥佩特拉之间反复摇摆。与屋大维的短暂和解破裂后，亚克兴海战失败；错误死讯使安东尼自刎，克莉奥佩特拉也拒绝成为罗马凯旋式中的俘虏而自尽。剧本既写帝国权力重组，也让两位主角的表演、欲望与自我神话彼此纠缠。书库当前人物表和五幕正文齐全、无逐字重幕，译文核为朱生豪本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《安东尼与克莉奥佩特拉》1606—1607年断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《安东尼与克莉奥佩特拉》1623年首次刊行", "url": "https://www.folger.edu/explore/shakespeares-works/antony-and-cleopatra/an-introduction-to-this-text/"},
+        {"title": "Shakespeare Documented：1608年登记与1623年《第一对开本》记录", "url": "https://shakespearedocumented.folger.edu/plays-poetry/antony-and-cleopatra"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "627": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《错误的喜剧》是其短小的早期闹剧，主要改写普劳图斯《孪生兄弟》。书库中文本为朱生豪译。",
+      "period": "原作约1594年或更早写成，1594年12月已有格雷学院演出记录；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "错误的喜剧", "The Comedy of Errors", "英国文艺复兴", "早期闹剧", "1594年", "1623年初刊", "双胞胎错认", "家庭团聚"],
+      "description": "叙拉古商人伊勒因违反禁令在以弗所被判死刑，临刑前讲述海难拆散妻儿的往事。与此同时，两对同名、同貌的双胞胎主人和仆人都来到城中，送货、债务、婚姻和逮捕因此接连错位。修道院长最终认出丈夫和儿子，两家团聚。书库当前含人物表和五幕正文，结构完整、无逐字重幕；早期演出和1623年初刊资料已补入，原来的“年代待考”已纠正。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《错误的喜剧》1594年演出背景", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《错误的喜剧》1623年《第一对开本》初刊", "url": "https://www.folger.edu/explore/shakespeares-works/the-comedy-of-errors/an-introduction-to-this-text/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "628": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《冬天的故事》属于晚期传奇剧，以跨越十六年的时间、失女、悔罪和近似神迹的重逢连接悲剧与喜剧。书库中文本为朱生豪译。",
+      "period": "原作约1610—1611年写成，1611年已有观剧记录；1623年《第一对开本》首次刊行",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "冬天的故事", "The Winter's Tale", "英国文艺复兴", "传奇剧", "1610至1611年", "1623年初刊", "嫉妒与悔罪", "十六年跨时"],
+      "description": "西西里王里昂提斯无端怀疑王后埃尔米奥娜与波希米亚王私通，导致幼子夭折，并把新生女儿珀迪塔遗弃。十六年后，珀迪塔与波希米亚王子相爱，逃回西西里；悔罪多年的里昂提斯认回女儿，又在雕像揭幕中与隐居未死的王后重逢。作品由嫉妒造成的宫廷悲剧转向牧歌、时间与修复。书库当前人物表和五幕正文齐全，无逐字重幕，原作日期补为1610至1611年前后。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《冬天的故事》1611年断代与演出", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《冬天的故事》1623年《第一对开本》初刊", "url": "https://www.folger.edu/explore/shakespeares-works/the-winters-tale/an-introduction-to-this-text/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "629": {
+      "author": "威廉·莎士比亚、约翰·弗莱彻（合作说）；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（1564—1616）与约翰·弗莱彻（John Fletcher，1579—1625）均为英国剧作家。当代研究多接受《亨利八世》由二人合作，但仍存在莎士比亚独作等意见，故作者栏保留“合作说”。朱生豪译本沿传统只题莎士比亚。",
+      "period": "原作约1613年写成，1613年6月29日演出时引发环球剧场火灾；1623年《第一对开本》首次刊行，早期又称《一切都是真的》",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "约翰·弗莱彻", "朱生豪", "亨利八世", "Henry VIII", "一切都是真的", "英国历史剧", "1613年", "合作剧争议", "王权与宗教"],
+      "description": "历史剧串联白金汉公爵受诬被处死、凯瑟琳王后反对沃尔西苛税并遭离婚、沃尔西失势、安·波琳加冕及伊丽莎白出生等事件，以盛大仪式和连续“失宠”展示都铎宫廷的权力转换。作品早期又称《一切都是真的》，1613年演出时舞台炮火引燃环球剧场。书库当前人物表和五幕正文完整、无逐字重幕；作者补出弗莱彻合作说，并保留归属尚有争论的边界。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎士比亚与弗莱彻合作《亨利八世》的资料", "url": "https://www.rsc.org.uk/shakespeares-contemporaries/meet-the-contemporaries"},
+        {"title": "福尔杰莎士比亚图书馆：《亨利八世》合作归属的证据与争议", "url": "https://www.folger.edu/explore/shakespeares-works/henry-viii/appendix-on-authorship/"},
+        {"title": "福尔杰莎士比亚图书馆：1613年演出、环球剧场火灾与剧情结构", "url": "https://www.folger.edu/explore/shakespeares-works/henry-viii/henry-viii-a-modern-perspective/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "630": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616）是英国剧作家、诗人。《亨利五世》承接两部《亨利四世》，由“歌队”不断提醒观众舞台再现战争的限度。书库中文本为朱生豪译。",
+      "period": "原作1599年上半年写成并演出；1600年第一四开本为明显缩短的不完整文本，1623年《第一对开本》保存较完整版本",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "亨利五世", "Henry V", "英国文艺复兴", "英国历史剧", "1599年", "1600年四开本", "1623年对开本", "阿金库尔战役"],
+      "description": "亨利五世以法国王位继承权为由出兵，识破南安普敦阴谋，围攻哈弗娄并在阿金库尔以少胜多，最终以婚姻和条约取得法国继承地位。歌队反复邀请观众用想象补足舞台，也让英雄叙事与战争代价并存。1600年初刊四开本大幅缩短且质量有缺，1623年对开本较完整。书库当前含人物表和五幕正文、无逐字重幕，属于完整五幕阅读本而非短四开本的简单转录。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《亨利五世》1599年断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《亨利五世》1599年创作、1600年不完整四开本与早期演出", "url": "https://folgerpedia.folger.edu/Henry_V"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    }
+  }
+}

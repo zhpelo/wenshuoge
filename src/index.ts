@@ -1,3 +1,5 @@
+import { redirectLegacyBook, serveBookDetail } from "./book-detail";
+
 const securityHeaders = {
   "Referrer-Policy": "strict-origin-when-cross-origin",
   "X-Content-Type-Options": "nosniff",
@@ -254,6 +256,76 @@ async function downloadStats(request: Request, env: Env, url: URL): Promise<Resp
   });
 }
 
+type WikipediaSummary = {
+  type?: string;
+  title?: string;
+  description?: string;
+  extract?: string;
+  thumbnail?: { source?: string; width?: number; height?: number };
+  content_urls?: { desktop?: { page?: string } };
+};
+
+async function authorBiography(request: Request, ctx: ExecutionContext, url: URL): Promise<Response> {
+  if (request.method !== "GET") {
+    return json({ error: "method_not_allowed", message: "仅支持读取作者资料。" }, 405, { Allow: "GET" });
+  }
+  const name = (url.searchParams.get("name") ?? "").trim();
+  if (!name || name.length > 80 || !/^[\p{L}\p{M}\d·・.\-—（）()\[\]〔〕\s]+$/u.test(name)) {
+    return json({ error: "invalid_author", message: "作者姓名无效。" }, 400);
+  }
+
+  const cache = (caches as CacheStorage & { default: Cache }).default;
+  const cacheKey = new Request(`${url.origin}/api/authors/biography?name=${encodeURIComponent(name)}`);
+  const cached = await cache.match(cacheKey);
+  if (cached) return cached;
+
+  const endpoint = `https://zh.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(name.replaceAll(" ", "_"))}`;
+  let upstream: Response;
+  try {
+    upstream = await fetch(endpoint, {
+      headers: {
+        "Accept": "application/json",
+        "Api-User-Agent": "Wenshuoge/1.0 (https://www.wenshuoge.com)",
+        "User-Agent": "Wenshuoge/1.0 (https://www.wenshuoge.com)",
+      },
+    });
+  } catch (error) {
+    console.error(JSON.stringify({
+      event: "wikipedia_fetch_failed",
+      author: name,
+      message: error instanceof Error ? error.message : "unknown error",
+    }));
+    return json({ error: "wikipedia_unavailable", message: "维基百科暂时无法访问，请稍后再试。" }, 502);
+  }
+
+  if (upstream.status === 404) {
+    const response = json({ found: false, name, message: "中文维基百科暂未收录这位作者的独立词条。" }, 200, {
+      "Cache-Control": "public, max-age=3600, s-maxage=86400",
+    });
+    ctx.waitUntil(cache.put(cacheKey, response.clone()));
+    return response;
+  }
+  if (!upstream.ok) {
+    console.error(JSON.stringify({ event: "wikipedia_upstream_error", author: name, status: upstream.status }));
+    return json({ error: "wikipedia_unavailable", message: "维基百科暂时无法访问，请稍后再试。" }, 502);
+  }
+
+  const summary = await upstream.json<WikipediaSummary>();
+  const response = json({
+    found: true,
+    name,
+    title: summary.title || name,
+    description: summary.description || "",
+    extract: summary.extract || "维基百科暂未提供这位作者的生平摘要。",
+    thumbnail: summary.thumbnail?.source || "",
+    pageUrl: summary.content_urls?.desktop?.page || endpoint,
+    disambiguation: summary.type === "disambiguation",
+    source: "中文维基百科",
+  }, 200, { "Cache-Control": "public, max-age=3600, s-maxage=86400" });
+  ctx.waitUntil(cache.put(cacheKey, response.clone()));
+  return response;
+}
+
 async function serveBook(request: Request, env: Env, url: URL): Promise<Response> {
   if (request.method !== "GET" && request.method !== "HEAD") {
     return json({ error: "method_not_allowed", message: "仅支持读取电子书。" }, 405, { Allow: "GET, HEAD" });
@@ -338,6 +410,16 @@ export default {
     const url = new URL(request.url);
 
     try {
+      if (url.pathname === "/" && url.searchParams.has("book")) {
+        const redirect = await redirectLegacyBook(env, url, url.searchParams.get("book") ?? "");
+        if (redirect) return redirect;
+      }
+      if (url.pathname.startsWith("/book/")) {
+        const response = await serveBookDetail(request, env, ctx, url);
+        const headers = new Headers(response.headers);
+        for (const [name, value] of Object.entries(securityHeaders)) headers.set(name, value);
+        return new Response(response.body, { status: response.status, headers });
+      }
       if (url.pathname === "/api/health") {
         return json({ ok: true, service: "文硕阁", domain: "www.wenshuoge.com" });
       }
@@ -349,6 +431,9 @@ export default {
       }
       if (url.pathname === "/api/downloads") {
         return await downloadStats(request, env, url);
+      }
+      if (url.pathname === "/api/authors/biography") {
+        return await authorBiography(request, ctx, url);
       }
       if (url.pathname === "/api/book") {
         return await serveBook(request, env, url);

@@ -10,21 +10,23 @@
     <meta property="og:description" content="在线阅读、免费下载与分享中文公版经典。" />
     <meta property="og:url" content="https://www.wenshuoge.com/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-v2.css?v=6" />
     <title>文硕阁｜免费公版书分享</title>
   </head>
   <body>
     <a class="skip-link" href="#library">跳到藏书</a>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="文硕阁首页">
+      <a class="brand" href="/" aria-label="文硕阁首页">
         <span class="brand-seal" aria-hidden="true">文<br />硕</span>
         <span class="brand-name">文硕阁<small>WEN SHUO GE</small></span>
       </a>
       <nav aria-label="主导航">
-        <a href="#library">藏书检索</a>
-        <a href="#categories">分类浏览</a>
-        <a href="#about">关于本站</a>
+        <a href="/#library">藏书检索</a>
+        <a href="/#categories">分类浏览</a>
+        <a href="/authors">仰止轩</a>
+        <a href="/about">关于我们</a>
       </nav>
+      <a class="mobile-author-link" href="/authors">仰止轩</a>
       <span class="public-badge">公开 · 免费 · 无需登录</span>
     </header>
 
@@ -89,10 +91,10 @@
             <input id="catalog-query" type="search" placeholder="在全阁中检索……" autocomplete="off" />
             <button type="submit">搜索</button>
           </form>
-          <div class="format-filter" aria-label="格式筛选">
-            <button class="active" data-format="all">全部</button>
-            <button data-format="epub">EPUB</button>
-            <button data-format="pdf">PDF</button>
+          <div class="review-filter" aria-label="书籍核验状态筛选">
+            <button class="active" data-review="all">全部</button>
+            <button data-review="reviewed">已核验</button>
+            <button data-review="unreviewed">未核验</button>
           </div>
         </div>
 
@@ -132,18 +134,19 @@
           <p class="eyebrow dark"><span></span>OUR PURPOSE</p>
           <h2 id="about-title">让经典，回到每个人手中</h2>
           <p>文硕阁是一个完全公开、免费的公版书分享网站。无需注册，不设会员，没有广告；只愿为古老文字留一盏灯。</p>
-          <div class="principles">
-            <div><b>壹</b><span><strong>自由取阅</strong>EPUB 与 PDF 随心选择</span></div>
-            <div><b>贰</b><span><strong>纯净无扰</strong>无登录、无付费、无广告</span></div>
-            <div><b>叁</b><span><strong>持续整理</strong>让更多公版经典重新流通</span></div>
+          <div class="about-links">
+            <a href="/about"><strong>了解文硕阁</strong><span>我们的初心与整理原则 →</span></a>
+            <a href="/contact"><strong>联系与反馈</strong><span>勘误、版权或合作建议 →</span></a>
+            <a href="/copyright"><strong>版权与协议</strong><span>了解取阅边界与使用规则 →</span></a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
       <div class="footer-brand"><span class="brand-seal small">文<br />硕</span><strong>文硕阁<small>传承文明硕果</small></strong></div>
       <p>本站仅收录并分享公共版权领域作品 · 请读者自行遵守所在地法律</p>
+      <nav class="footer-links" aria-label="站点信息"><a href="/about">关于我们</a><a href="/contact">联系我们</a><a href="/copyright">版权声明</a><a href="/terms">服务协议</a></nav>
       <p>© <span id="year"></span> wenshuoge.com</p>
     </footer>
 
@@ -192,19 +195,26 @@
         <div class="dialog-actions"></div>
         <p class="dialog-download-count" aria-live="polite">正在读取下载数据……</p>
         <details class="share-panel">
-          <summary>分享这本好书</summary>
-          <div class="share-lead">
-            <button class="share-native" type="button">系统分享</button>
-            <button class="share-copy" type="button">复制链接</button>
+          <summary id="share-panel-title"><span>分享这本好书</span><small>展开分享</small></summary>
+          <div class="share-panel-body">
+            <div class="share-copy-preview">
+              <p></p>
+              <a target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="share-lead">
+              <button class="share-native" type="button">系统分享</button>
+              <button class="share-copy" type="button">复制文案和链接</button>
+            </div>
+            <p>选择平台；没有网页直发接口的平台会自动复制上方文案和链接，再提示你打开对应 App。</p>
+            <div class="share-platforms" aria-label="分享平台"></div>
           </div>
-          <p>选择平台；若平台不支持网页直发，会复制推荐语并提示你打开对应 App。</p>
-          <div class="share-platforms" aria-label="分享平台"></div>
         </details>
         <small>公版典籍 · 免费取阅 · 无需登录</small>
       </div>
     </dialog>
 
     <dialog class="reader-dialog" id="epub-reader">
+      <div class="reader-shell">
       <header class="reader-header">
         <div>
           <p>文硕阁在线阅读</p>
@@ -215,6 +225,7 @@
           <button type="button" data-reader-font="smaller" aria-label="缩小字号">字−</button>
           <button type="button" data-reader-font="larger" aria-label="放大字号">字＋</button>
           <button type="button" data-reader-theme="toggle" aria-label="切换夜间模式">明暗</button>
+          <button type="button" data-reader-fullscreen aria-label="进入全屏阅读" aria-pressed="false">全屏</button>
           <button class="reader-close" type="button" aria-label="关闭阅读器">×</button>
         </div>
       </header>
@@ -237,12 +248,16 @@
         <span class="reader-progress">阅读进度将在本浏览器自动保存</span>
         <button type="button" data-reader-nav="next">下一页 →</button>
       </footer>
+      </div>
     </dialog>
 
     <div class="site-toast" id="site-toast" role="status" aria-live="polite" hidden></div>
 
     <script src="/vendor/epubjs/jszip.min.js" defer></script>
     <script src="/vendor/epubjs/epub.min.js" defer></script>
-    <script src="/app.js" type="module"></script>
+    <script src="/app-v3.js?v=6" type="module"></script>
+    <script>
+      !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"K3BXpocbCBsHygtP",ck:"K3BXpocbCBsHygtP"});
+    </script>
   </body>
 </html>

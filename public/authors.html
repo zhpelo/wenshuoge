@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#241711" />
+    <meta name="description" content="文硕阁仰止轩——浏览书库署名作者与作品，并通过中文维基百科了解作者生平。" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css?v=4" />
+    <link rel="stylesheet" href="/authors-v7.css?v=10" />
+    <title>仰止轩｜文硕阁作者名录</title>
+  </head>
+  <body class="authors-page">
+    <a class="skip-link" href="#authors">跳到作者名录</a>
+    <header class="site-header authors-site-header">
+      <a class="brand" href="/" aria-label="返回文硕阁首页">
+        <span class="brand-seal" aria-hidden="true">文<br />硕</span>
+        <span class="brand-name">文硕阁<small>WEN SHUO GE</small></span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="/#library">藏书检索</a>
+        <a href="/#categories">分类浏览</a>
+        <a class="active" href="/authors" aria-current="page">仰止轩</a>
+        <a href="/about">关于我们</a>
+      </nav>
+      <a class="mobile-author-link" href="/">藏书首页</a>
+      <span class="public-badge">公开 · 免费 · 无需登录</span>
+    </header>
+
+    <main>
+      <section class="xuan-hero" aria-labelledby="xuan-title">
+        <div class="xuan-static-scene" aria-hidden="true"></div>
+
+        <div class="xuan-copy">
+          <p class="eyebrow"><span></span>THE HALL OF AUTHORS</p>
+          <h1 id="xuan-title">仰止轩</h1>
+          <p>循阶而上，见其人，读其书。这里收录阁中典籍明确署名的作者，也为每一部著述寻回它背后的人生。</p>
+        </div>
+
+        <div class="xuan-stat" aria-live="polite">
+          <strong id="author-total">—</strong><span>位署名作者</span>
+          <b></b>
+          <strong id="authored-book-total">—</strong><span>册有主之书</span>
+        </div>
+      </section>
+
+      <section class="authors-library" id="authors" aria-labelledby="authors-title">
+        <div class="authors-heading">
+          <div>
+            <p class="eyebrow dark"><span></span>NAMES BEHIND THE BOOKS</p>
+            <h2 id="authors-title">著者群像</h2>
+          </div>
+          <p>依据书籍原始元数据与已核验资料汇总；“佚名”等无法确认身份的署名不列入本轩。</p>
+        </div>
+
+        <div class="author-toolbar">
+          <form class="author-search" id="author-search" role="search">
+            <label class="sr-only" for="author-query">搜索作者或作品</label>
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="author-query" type="search" placeholder="搜索作者或作品，如：鲁迅、史记、莎士比亚" autocomplete="off" />
+            <button type="submit">寻访</button>
+          </form>
+          <p class="author-result-count" id="author-result-count" aria-live="polite">正在展开名录……</p>
+        </div>
+
+        <div class="author-grid" id="author-grid" aria-live="polite" aria-busy="true">
+          <div class="author-skeleton"></div><div class="author-skeleton"></div><div class="author-skeleton"></div><div class="author-skeleton"></div>
+        </div>
+        <div class="author-empty" id="author-empty" hidden>
+          <span>访</span><h3>没有寻到这位作者</h3><p>可以改用姓名、字号或作品名称搜索。</p>
+        </div>
+        <button class="load-more author-load-more" id="author-load-more" type="button" hidden>再访一席 <span>↓</span></button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="brand-seal small">文<br />硕</span><strong>文硕阁<small>传承文明硕果</small></strong></div>
+      <p>本站仅收录并分享公共版权领域作品 · 请读者自行遵守所在地法律</p>
+      <nav class="footer-links" aria-label="站点信息"><a href="/about">关于我们</a><a href="/contact">联系我们</a><a href="/copyright">版权声明</a><a href="/terms">服务协议</a></nav>
+      <p>© <span id="year"></span> wenshuoge.com</p>
+    </footer>
+
+    <dialog class="author-dialog" id="author-dialog">
+      <button class="author-dialog-close" type="button" aria-label="关闭作者详情">×</button>
+      <div class="author-portrait">
+        <span class="author-monogram" aria-hidden="true"></span>
+        <img alt="" hidden />
+        <small>仰止轩 · 著者像</small>
+      </div>
+      <div class="author-dialog-content">
+        <p class="dialog-kicker">文硕阁署名作者</p>
+        <h2 class="author-dialog-name"></h2>
+        <p class="author-book-count"></p>
+        <section class="author-biography" aria-labelledby="biography-title">
+          <div class="biography-heading">
+            <h3 id="biography-title">生平简介</h3>
+            <a class="wikipedia-link" target="_blank" rel="noopener noreferrer" hidden>查看维基百科原词条 ↗</a>
+          </div>
+          <p class="author-description" hidden></p>
+          <p class="author-extract">正在从中文维基百科寻访作者生平……</p>
+          <small>资料来源：中文维基百科；内容采用其对应许可，仅作阅读参考。</small>
+        </section>
+        <section class="author-works" aria-labelledby="works-title">
+          <h3 id="works-title">阁中著述</h3>
+          <div class="author-work-list"></div>
+        </section>
+      </div>
+    </dialog>
+
+    <script src="/authors-v7.js?v=8" type="module"></script>
+    <script>
+      !function(p){"use strict";!function(t){var s=window,e=document,i=p,c="".concat("https:"===e.location.protocol?"https://":"http://","sdk.51.la/js-sdk-pro.min.js"),n=e.createElement("script"),r=e.getElementsByTagName("script")[0];n.type="text/javascript",n.setAttribute("charset","UTF-8"),n.async=!0,n.src=c,n.id="LA_COLLECT",i.d=n;var o=function(){s.LA.ids.push(i)};s.LA?s.LA.ids&&o():(s.LA=p,s.LA.ids=[],o()),r.parentNode.insertBefore(n,r)}()}({id:"K3BXpocbCBsHygtP",ck:"K3BXpocbCBsHygtP"});
+    </script>
+  </body>
+</html>

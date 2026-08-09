@@ -1,0 +1,191 @@
+{
+  "batch": "051",
+  "updatedAt": "2026-08-08",
+  "note": "第五十一批顺序核验编号606至612及614至618的12部作品；编号613在原始目录中不存在。本批以元明、唐宋诗集和莎士比亚五部剧作为主，纠正《学言诗稿》《玄英集》《雪矶丛稿》《宫词一百首》的时代误标，并将误归佛教典籍的《皆大欢喜》改归戏曲。逐册辨明诗集原编与今存卷数，确认《秦妇吟》当前含238句原文及今译注释、《宫词一百首》虽沿用旧题而电子本实收《全唐诗》系统102首；五部莎剧均据正文核为朱生豪译本，并采用审慎的原作年代范围。",
+  "books": {
+    "606": {
+      "author": "吴当",
+      "authorInfo": "吴当，字伯尚，江西崇仁人，元代学者吴澄之孙。曾任国子助教、翰林直学士等职；元末陈友谅据江西时征召不屈，明初见朱元璋亦不改臣节，是元末遗民诗人的代表之一。",
+      "period": "元末诗作；原集九卷，明代叶良贵刊行，今本为清代李绂重编的六卷系统",
+      "era": "元代",
+      "category": "诗词文集",
+      "tags": ["吴当", "学言诗稿", "元代诗集", "元末遗民", "六卷本", "原集九卷", "李绂重刊", "四库全书", "版本流变"],
+      "description": "六卷诗稿按体裁编次：卷一四言，卷二五言古诗，卷三七言古诗，卷四五言律诗，卷五七言律诗，卷六五言绝句。作品多写山林游历、师友酬赠及元末兵乱中的身世之感，风格劲健，尤能见作者守节不仕的遗民立场。原集九卷，明代叶良贵曾刊；书库当前含提要及六卷正文，完整对应清代李绂合并重刊、后收入《四库全书》的六卷系统，并非原九卷本。",
+      "sources": [
+        {"title": "维基文库：《学言诗稿》四库提要、吴当生平与九卷至六卷流变", "url": "https://zh.wikisource.org/zh-hans/%E5%AD%B8%E8%A8%80%E8%A9%A9%E7%A8%BF_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29"},
+        {"title": "中国哲学书电子化计划：《学言诗稿》六卷及版本说明", "url": "https://ctext.org/wiki.pl?if=gb&remap=gb&res=183549"}
+      ],
+      "reviewed": true
+    },
+    "607": {
+      "author": "方干",
+      "authorInfo": "方干，字雄飞，睦州青溪人，晚唐诗人。咸通年间应进士试不第，卒后门人私谥“玄英先生”；其诗以山水行旅、隐居酬赠见长，时有清峭警炼之句。",
+      "period": "晚唐诗作；乾宁三年（896）王赞序十卷本，今本为嘉靖十六年（1537）方廷玺重刊的八卷307篇系统",
+      "era": "隋唐五代",
+      "category": "诗词文集",
+      "tags": ["方干", "玄英集", "晚唐诗集", "玄英先生", "乾宁三年", "十卷原集", "八卷本", "方廷玺重刊", "三百零七篇", "四库全书"],
+      "description": "诗集收方干山水、送别、旅夜、隐居和酬赠之作，语言清峭，尤长近体。方干卒后，侄杨弇与僧居远搜得三百七十余篇，编为十卷，王赞于乾宁三年作序；原编后来散佚。书库当前含提要、王赞原序、卷一至卷八及附录，正文完整对应明嘉靖十六年方廷玺重刊的八卷三百零七篇系统，不应误作宋代作品或原十卷全本。",
+      "sources": [
+        {"title": "维基文库：《玄英集》四库本提要、王赞原序及八卷正文", "url": "https://zh.wikisource.org/zh-hans/%F0%A4%A3%A5%E8%8B%B1%E9%9B%86_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29"},
+        {"title": "Kanripo汉籍库：《玄英集》八卷四库本", "url": "https://www.kanripo.org/ed/KR4c0104/WYG/008"},
+        {"title": "东贩书目：明嘉靖方廷玺刻《玄英集》八卷", "url": "https://www.toho-shoten.co.jp/export/sites/default/er07/list/rekidaibetu1.pdf"}
+      ],
+      "reviewed": true
+    },
+    "608": {
+      "author": "乐雷发",
+      "authorInfo": "乐雷发，字声远，号雪矶，南宋道州宁远人。长期讲学，宝祐元年（1253）经弟子姚勉奏请参加特科而中第一，未仕而归；诗文关注边事、民生与南宋现实。",
+      "period": "南宋宝祐五年（1257）作者自序定稿；五卷本",
+      "era": "宋代",
+      "category": "诗词文集",
+      "tags": ["乐雷发", "雪矶丛稿", "南宋诗集", "宝祐五年", "五卷本", "江湖诗派", "边事", "民生", "四库全书"],
+      "description": "五卷丛稿收古体、近体诗及少量歌行，既有山水酬唱，也多咏史、忧时和议论现实之作，《乌乌歌》等篇尤见对南宋政局与民生的关切。作者在宝祐五年自序称友人已为其刻梓。书库当前含提要、原序、卷一至卷五及后跋，结构连续、无逐字重篇，完整对应通行五卷本；原来的“年代待考”据此订正为宋代。",
+      "sources": [
+        {"title": "维基文库：《雪矶丛稿》四库全书五卷本", "url": "https://zh.wikisource.org/zh/%E9%9B%AA%E7%A3%AF%E5%8F%A2%E7%A8%BF_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29"},
+        {"title": "识典古籍：《雪矶丛稿》目录、宝祐丁巳原序及五卷正文", "url": "https://www.shidianguji.com/book/NGJ892412000001191166015/chapter/1lvtbw3zkzk1a"},
+        {"title": "CiNii Research：《雪矶丛稿》五卷书目", "url": "https://cir.nii.ac.jp/crid/1970023484868941742"}
+      ],
+      "reviewed": true
+    },
+    "609": {
+      "author": "王铚",
+      "authorInfo": "王铚，字性之，自号汝阴老民，汝阴人，北宋末至南宋初学者、诗人。绍兴初曾任枢密院编修官，熟悉典章史事，著有《默记》《四六话》等；晚年居剡溪，自号雪溪。",
+      "period": "南宋建炎、绍兴年间编成；原集八卷，今仅存五卷",
+      "era": "宋代",
+      "category": "诗词文集",
+      "tags": ["王铚", "雪溪集", "南宋诗集", "建炎绍兴", "剡溪", "原集八卷", "今存五卷", "残本", "四库全书"],
+      "description": "诗集多写两宋之际的兵乱感怀、行旅唱和与剡溪山居生活，也保存作者与当时文士往还的线索。宋代书目与《宋史·艺文志》均著录八卷，后世传本已佚三卷；四库馆臣又从他书考出未收入今本的诗篇，明确指出并非完帙。书库当前含提要和卷一至卷五，完整保存现行五卷传本且无逐字重篇，但不能标作原八卷全本。",
+      "sources": [
+        {"title": "中华书库：《雪溪集》四库全书本全览与五卷提要", "url": "https://www.zhonghuashu.com/wiki/%E9%9B%AA%E6%BA%AA%E9%9B%86%20%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29/%E5%85%A8%E8%A6%BD"},
+        {"title": "识典古籍：《雪溪集》原八卷、今佚三卷的四库提要", "url": "https://www.shidianguji.com/book/SK0000A/chapter/1kgsnvuyqf37z"},
+        {"title": "爱思想：王铚生平、著述与《雪溪集》八卷", "url": "https://www.aisixiang.com/data/91082.html"}
+      ],
+      "reviewed": true
+    },
+    "610": {
+      "author": "韦庄",
+      "authorInfo": "韦庄（约836—910），字端己，京兆杜陵人，晚唐五代诗人、词人。早年长期漂泊，乾宁元年（894）进士，后入蜀辅佐王建；《秦妇吟》使他在当时有“秦妇吟秀才”之称。",
+      "period": "唐僖宗中和三年（883）三月作于洛阳；近代由敦煌写本重新发现",
+      "era": "隋唐五代",
+      "category": "诗词文集",
+      "tags": ["韦庄", "秦妇吟", "中和三年", "晚唐诗歌", "七言叙事诗", "二百三十八句", "一千六百六十六字", "黄巢之乱", "敦煌写本", "原文今译"],
+      "description": "长篇七言叙事诗借一名逃离长安的“秦妇”自述，从880年长安陷落写到辗转东行的饥荒、屠杀与离乱，同时也写唐军收复后仍未止息的掠夺，以个人遭遇容纳复杂的战乱现实。全诗二百三十八句、一千六百六十六字，唐末曾广为传诵，后来失传，近代才由敦煌写卷重新发现。书库当前收完整原文、现代译文与注释，原文核为二百三十八句，无逐字重篇。",
+      "sources": [
+        {"title": "中国作家网：《秦妇吟》的敦煌发现、1666字与文学史价值", "url": "https://www.chinawriter.com.cn/n1/2021/0407/c404063-32071497.html"},
+        {"title": "中国网：《秦妇吟》883年创作及238句、1666字", "url": "https://www.china.org.cn/english/china_key_words/2025-08/11/content_118020400.html"},
+        {"title": "中华文库：《秦妇吟》敦煌写本与883年文本", "url": "https://www.zhonghuashu.com/wiki/%E7%A7%A6%E5%A9%A6%E5%90%9F"}
+      ],
+      "reviewed": true
+    },
+    "611": {
+      "author": "萨都剌",
+      "authorInfo": "萨都剌（约1300—约1355），字天锡，号直斋，元代诗人。泰定四年（1327）进士，历任镇江录事、燕南架阁、闽海廉访知事等职；诗风清丽而兼有雄健，尤长山水、怀古与行旅之作。",
+      "period": "元代诗作；旧八卷本已佚，今本为明末毛晋三卷本加《集外诗》一卷的四卷系统",
+      "era": "元代",
+      "category": "诗词文集",
+      "tags": ["萨都剌", "雁门集", "元代诗集", "直斋", "泰定四年进士", "毛晋刊本", "三卷本", "集外诗", "四卷系统", "版本流变"],
+      "description": "诗集收山水行旅、题画怀古、宫词、酬赠和民生题材，既有江南清丽景物，也有北方边塞与历史兴亡之感。原有八卷本后来罕见；明末毛晋据别本合刊为三卷，又把荻匾王氏旧抄中未收诗编为《集外诗》一卷，成为四库著录的三卷加集外一卷系统。书库当前正文分卷一至卷四，实质对应这一四卷传本，未收入后世另辑的十四卷系统。",
+      "sources": [
+        {"title": "维基文库：《雁门集》四库提要、三卷及集外诗一卷版本", "url": "https://zh.wikisource.org/zh-hans/%E9%9B%81%E9%96%80%E9%9B%86_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29"},
+        {"title": "中国哲学书电子化计划：《雁门集》三卷及集外诗一卷", "url": "https://ctext.org/wiki.pl?if=gb&remap=gb&res=328703"}
+      ],
+      "reviewed": true
+    },
+    "612": {
+      "author": "王建",
+      "authorInfo": "王建（约767—约830），字仲初，颍川人，中唐诗人。曾任昭应县丞、太府寺丞等职，与张籍齐名，乐府诗多写民生疾苦；《宫词》组诗则以宫中日常和制度见长。",
+      "period": "约唐宪宗元和末至穆宗长庆初（820年前后）写成；旧题百首，《全唐诗》卷三〇二系统实收102首",
+      "era": "隋唐五代",
+      "category": "诗词文集",
+      "tags": ["王建", "宫词一百首", "中唐诗歌", "宫词", "七言绝句", "宫廷生活", "元和末年", "长庆年间", "全唐诗卷三〇二", "一百零二首"],
+      "description": "组诗以七言绝句连续描写宫门朝会、后妃宫女、节令宴乐、教坊歌舞、值宿劳作与宫中人情，许多细节不见于正史，开拓了后世“宫词”体的写作规模。题名沿称“一百首”，但《全唐诗》卷三〇二的通行系统实际收一百零二首。书库当前单篇正文核得一百零二首、每首四句，完整对应这一传本，因此保留传统书名并在资料中说明实数；年代由“待考”订为中唐。",
+      "sources": [
+        {"title": "《王建〈宫词〉探论》：创作年代、宫廷史料与组诗研究", "url": "https://core.ac.uk/download/pdf/41691181.pdf"},
+        {"title": "KCI论文：王建《宫词一百首》的创作背景和宫廷生活内容", "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART001409904"},
+        {"title": "学达书库：《宫词一百首》通行本实收102首", "url": "https://www.xuoda.com/mj/w/wangjian/gc/index.htm"},
+        {"title": "维基文库：王建《宫词》全文", "url": "https://zh.wikisource.org/zh-hans/%E5%AE%AE%E8%A9%9E_%28%E7%8E%8B%E5%BB%BA%29"}
+      ],
+      "reviewed": true
+    },
+    "614": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616），英国剧作家、诗人，伊丽莎白时代和詹姆斯时代戏剧的代表人物。朱生豪（1912—1944）是中国莎剧翻译家；书库正文与其译本对应，故补入翻译责任。",
+      "period": "原作通常定于1599年末，1623年《第一对开本》首次刊行；朱生豪中文全译本20世纪40年代完成并于1947年起出版",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "皆大欢喜", "As You Like It", "英国文艺复兴", "英国喜剧", "1599年", "阿登森林", "性别乔装", "五幕剧"],
+      "description": "被放逐的罗瑟琳与堂妹西莉亚乔装进入阿登森林，遇见逃离兄长压迫的奥兰多。罗瑟琳化名少年盖尼米德，以“治疗爱情”为名训练奥兰多追求自己；宫廷的权力冲突在森林中转化为身份试验、爱情辩论与多重和解。原作通常定于1599年，首次印于1623年《第一对开本》。书库当前含人物表和五幕正文，结构完整、无逐字重幕；分类由佛教典籍纠正为戏曲，正文核为朱生豪译本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《皆大欢喜》1599年断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《皆大欢喜》剧情、主题与人物", "url": "https://www.folger.edu/explore/shakespeares-works/as-you-like-it/about-shakespeares-as-you-like-it/"},
+        {"title": "莎士比亚出生地信托：《皆大欢喜》五幕剧情梗概", "url": "https://www.shakespeare.org.uk/explore-shakespeare/shakespedia/shakespeares-plays/as-you-like-it/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "615": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616），英国剧作家、诗人。《罗密欧与朱丽叶》是其早期悲剧名作。朱生豪（1912—1944）是中国莎剧翻译家；书库正文用语与朱译本对应。",
+      "period": "原作约1595—1596年写成，1597年第一四开本初刊，1599年第二四开本奠定现代通行文本；朱生豪译本20世纪40年代完成",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "罗密欧与朱丽叶", "Romeo and Juliet", "英国文艺复兴", "英国悲剧", "1595至1596年", "1597年初刊", "维洛那", "家族仇杀", "五幕剧"],
+      "description": "维洛那两大仇家蒙太古与凯普莱特的子女罗密欧、朱丽叶相爱并秘密成婚，却因街头仇杀、放逐和传信失误先后死去，二人的死亡最终迫使家族和解。剧本把青春爱情置于代际冲突和暴力秩序之中。原作约写于1595至1596年，1597年初刊，现代版本多以1599年第二四开本为基础。书库当前含人物表和五幕正文，结构完整、无逐字重幕，译文核为朱生豪本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《罗密欧与朱丽叶》1595—1596年断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《罗密欧与朱丽叶》1597、1599年早期印本", "url": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/"},
+        {"title": "福尔杰莎士比亚图书馆：《罗密欧与朱丽叶》剧情与主题", "url": "https://www.folger.edu/explore/shakespeares-works/romeo-and-juliet/about-shakespeares-romeo-and-juliet/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "616": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616），英国剧作家、诗人。《维洛那二绅士》通常被视为其早期喜剧。朱生豪（1912—1944）译出大部分莎剧；书库正文与其译本对应。",
+      "period": "原作作于1590年代，具体年份无定论，1623年《第一对开本》首次刊行；朱生豪译本20世纪40年代完成",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "维洛那二绅士", "The Two Gentlemen of Verona", "英国文艺复兴", "早期喜剧", "1590年代", "1623年初刊", "友谊与爱情", "五幕剧"],
+      "description": "凡伦丁与普洛丢斯是维洛那好友，却在米兰同时卷入对西尔维娅的爱情。普洛丢斯背弃恋人朱利娅，又出卖朋友；朱利娅则乔装少年追随而来。剧本以旅行、书信、乔装、背叛与和解试验友谊和爱情，也保留一个极具争议的仓促结局。作品写于1590年代，具体年份缺乏硬证，1623年首次刊行。书库当前含人物表与五幕正文，结构完整、无逐字重幕，译文核为朱生豪本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《维洛那二绅士》1590年代断代边界", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《维洛那二绅士》1623年首次刊行", "url": "https://www.folger.edu/explore/shakespeares-works/the-two-gentlemen-of-verona/an-introduction-to-this-text/"},
+        {"title": "福尔杰莎士比亚图书馆：《维洛那二绅士》剧情与主题", "url": "https://www.folger.edu/explore/shakespeares-works/the-two-gentlemen-of-verona/about-shakespeares-the-two-gentlemen-of-verona/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "617": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616），英国剧作家、诗人。福斯塔夫在《温莎的风流娘儿们》中从历史剧人物转入市民喜剧。朱生豪（1912—1944）为书库所收中文本译者。",
+      "period": "原作约1597—1601年写成，1602年第一四开本初刊，1623年《第一对开本》收入较完整文本；朱生豪译本20世纪40年代完成",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "温莎的风流娘儿们", "The Merry Wives of Windsor", "英国文艺复兴", "市民喜剧", "1597至1601年", "1602年初刊", "福斯塔夫", "五幕剧"],
+      "description": "缺钱的福斯塔夫同时写信追求福德太太和培琪太太，企图骗取财物；两位夫人识破相同情书，接连用脏衣篮、老妇乔装和温莎森林的精灵游戏惩治他。另一条线写安·培琪摆脱父母各自安排的婚事，自择范顿。原作约写于1597至1601年，1602年四开本初刊，1623年《第一对开本》保存更完整文本。书库当前含人物表与五幕正文，结构完整、无逐字重幕，译文核为朱生豪本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《温莎的风流娘儿们》1597—1601年范围", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《温莎的风流娘儿们》1602四开本与1623对开本", "url": "https://www.folger.edu/explore/shakespeares-works/the-merry-wives-of-windsor/an-introduction-to-this-text/"},
+        {"title": "福尔杰莎士比亚图书馆：《温莎的风流娘儿们》剧情与市民喜剧背景", "url": "https://www.folger.edu/explore/shakespeares-works/the-merry-wives-of-windsor/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    },
+    "618": {
+      "author": "威廉·莎士比亚；朱生豪译",
+      "authorInfo": "威廉·莎士比亚（William Shakespeare，1564—1616），英国剧作家、诗人。《无事生非》以机锋对话和两组爱情故事见长。朱生豪（1912—1944）是书库所收中文本译者。",
+      "period": "原作约1598年末写成，1600年第一四开本初刊，1623年收入《第一对开本》；朱生豪译本20世纪40年代完成",
+      "era": "近现代",
+      "category": "戏曲",
+      "tags": ["莎士比亚", "朱生豪", "无事生非", "Much Ado About Nothing", "英国文艺复兴", "英国喜剧", "1598年", "1600年初刊", "贝特丽丝与培尼狄克", "五幕剧"],
+      "description": "剧本并行两组爱情：贝特丽丝与培尼狄克以唇枪舌剑掩饰感情，旁人设局让二人承认相爱；克劳狄奥却轻信唐约翰的骗局，在婚礼上公开羞辱希罗，最终由巡夜人误打误撞揭穿阴谋。作品在喜剧框架中并置机智、诽谤、名誉和性别双重标准。原作约成于1598年末，1600年初刊。书库当前含人物表与五幕正文，结构完整、无逐字重幕，译文核为朱生豪本。",
+      "sources": [
+        {"title": "皇家莎士比亚剧团：莎剧年表及《无事生非》1598年末断代", "url": "https://www.rsc.org.uk/shakespeares-plays/histories-timeline/timeline"},
+        {"title": "福尔杰莎士比亚图书馆：《无事生非》1600年第一四开本及1623年对开本", "url": "https://www.folger.edu/explore/shakespeares-works/much-ado-about-nothing/an-introduction-to-this-text/"},
+        {"title": "福尔杰莎士比亚图书馆：《无事生非》两组爱情与主题", "url": "https://www.folger.edu/explore/shakespeares-works/much-ado-about-nothing/about-shakespeares-much-ado-about-nothing/"},
+        {"title": "大英图书馆：莎士比亚在中国及朱生豪译本", "url": "https://www.britishlibrary.cn/zh-cn/articles/shakespeare-in-china/"}
+      ],
+      "reviewed": true
+    }
+  }
+}

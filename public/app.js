@@ -1,7 +1,9 @@
 const PAGE_SIZE = 16;
 const DETAIL_SHARD_SIZE = 500;
-const CATALOG_REVISION = "044-1";
+const CATALOG_REVISION = "051-review-1";
 const READER_PROGRESS_PREFIX = "wenshuoge:reader:";
+const READER_FONT_SIZE_KEY = "wenshuoge:reader-font-size";
+const READER_FONT_STEP = 25;
 const VISITOR_KEY = "wenshuoge:visitor";
 const palettes = [
   ["#7b2e29", "#f0d29d"], ["#31524b", "#e9d5a6"], ["#3d4f61", "#ead3a6"],
@@ -17,7 +19,7 @@ const sharePlatforms = [
 ];
 
 const state = {
-  books: [], filtered: [], categories: [], query: "", format: "all", category: "all", visible: PAGE_SIZE,
+  books: [], filtered: [], categories: [], query: "", verification: "all", category: "all", visible: PAGE_SIZE,
   detailCache: new Map(), dialogRequest: 0, activeBook: null, statsRequest: 0,
 };
 
@@ -44,6 +46,26 @@ const elements = {
 };
 
 let toastTimer = 0;
+let lockedPageScrollY = 0;
+
+function lockPageScroll() {
+  if (document.body.classList.contains("modal-scroll-locked")) return;
+  lockedPageScrollY = window.scrollY;
+  document.documentElement.classList.add("modal-scroll-locked");
+  document.body.classList.add("modal-scroll-locked");
+  document.body.style.top = `-${lockedPageScrollY}px`;
+}
+
+function unlockPageScroll() {
+  if (elements.dialog.open || elements.reader.open || !document.body.classList.contains("modal-scroll-locked")) return;
+  document.documentElement.classList.remove("modal-scroll-locked");
+  document.body.classList.remove("modal-scroll-locked");
+  document.body.style.top = "";
+  const previousBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = "auto";
+  window.scrollTo(0, lockedPageScrollY);
+  document.documentElement.style.scrollBehavior = previousBehavior;
+}
 
 function showToast(message, tone = "info") {
   window.clearTimeout(toastTimer);
@@ -77,6 +99,11 @@ function storageGet(key) {
 
 function storageSet(key, value) {
   try { localStorage.setItem(key, value); } catch { /* private mode can reject storage */ }
+}
+
+function savedReaderFontSize() {
+  const value = Number(storageGet(READER_FONT_SIZE_KEY));
+  return Number.isFinite(value) && value >= 50 ? value : 100;
 }
 
 function getVisitorId() {
@@ -178,13 +205,25 @@ function renderSources(container, sources) {
 }
 
 function sharedBookUrl(book) {
-  const url = new URL(location.origin + location.pathname);
-  url.searchParams.set("book", book.id);
-  return url.href;
+  return `${location.origin}/book/${encodeURIComponent(book.id)}/${bookSlug(book.title)}`;
+}
+
+function bookSlug(title) {
+  return title.normalize("NFKC")
+    .replace(/[《》「」『』【】〔〕（）()]/gu, "")
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/^-+|-+$/gu, "")
+    .toLocaleLowerCase("zh-CN")
+    .slice(0, 80) || "book";
+}
+
+function shareMessage(book) {
+  const benefit = book.formats.includes("epub") ? "可以免费在线阅读，也能下载收藏" : "可以免费下载收藏";
+  return `我送给你一本好书《${book.title}》，${benefit}，不用注册，完全免费。赶快点这里领取：`;
 }
 
 function shareCopy(book) {
-  return `我在文硕阁发现了《${book.title}》（${book.author || "佚名"}），可以免费在线阅读：${sharedBookUrl(book)}`;
+  return `${shareMessage(book)}${sharedBookUrl(book)}`;
 }
 
 async function copyText(value) {
@@ -204,20 +243,21 @@ async function copyText(value) {
 
 function directShareUrl(platform, book) {
   const url = encodeURIComponent(sharedBookUrl(book));
-  const title = encodeURIComponent(`推荐《${book.title}》｜文硕阁免费在线阅读`);
+  const title = encodeURIComponent(`我送给你一本好书《${book.title}》`);
+  const message = encodeURIComponent(shareMessage(book));
   const text = encodeURIComponent(shareCopy(book));
   return {
-    weibo: `https://service.weibo.com/share/share.php?url=${url}&title=${title}`,
+    weibo: `https://service.weibo.com/share/share.php?url=${url}&title=${message}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
     whatsapp: `https://wa.me/?text=${text}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-    x: `https://twitter.com/intent/tweet?text=${title}&url=${url}`,
+    x: `https://twitter.com/intent/tweet?text=${message}&url=${url}`,
     reddit: `https://www.reddit.com/submit?url=${url}&title=${title}`,
-    pinterest: `https://pinterest.com/pin/create/button/?url=${url}&description=${title}`,
+    pinterest: `https://pinterest.com/pin/create/button/?url=${url}&description=${message}`,
   }[platform];
 }
 
-async function shareToPlatform(platform, label, book) {
+async function shareToPlatform(platform, label, book, button) {
   const direct = directShareUrl(platform, book);
   if (direct) {
     window.open(direct, "_blank", "noopener,noreferrer");
@@ -225,37 +265,51 @@ async function shareToPlatform(platform, label, book) {
   }
   try {
     await copyText(shareCopy(book));
-    showToast(`推荐语和链接已复制，请打开${label}发布分享`);
+    const previous = button?.textContent;
+    if (button) {
+      button.textContent = "已复制";
+      window.setTimeout(() => { button.textContent = previous; }, 1600);
+    }
+    showToast(`分享文案和链接已复制，请打开${label}粘贴发布`);
   } catch {
-    showToast(`请复制浏览器地址，然后打开${label}分享`, "error");
+    showToast(`自动复制失败，请手动复制上方分享文案和链接`, "error");
   }
 }
 
 function renderSharePanel(book) {
   const panel = elements.dialog.querySelector(".share-panel");
   panel.open = false;
+  const url = sharedBookUrl(book);
+  panel.querySelector(".share-copy-preview p").textContent = shareMessage(book);
+  const previewUrl = panel.querySelector(".share-copy-preview a");
+  previewUrl.href = url;
+  previewUrl.textContent = url;
   const platforms = panel.querySelector(".share-platforms");
   platforms.replaceChildren(...sharePlatforms.map(([id, label]) => {
     const button = document.createElement("button");
     button.type = "button";
     button.dataset.platform = id;
+    const direct = Boolean(directShareUrl(id, book));
+    button.dataset.shareMode = direct ? "direct" : "copy";
     button.textContent = label;
-    button.addEventListener("click", () => shareToPlatform(id, label, book));
+    button.title = direct ? `打开${label}分享` : `复制文案和链接，再到${label}分享`;
+    button.setAttribute("aria-label", button.title);
+    button.addEventListener("click", () => shareToPlatform(id, label, book, button));
     return button;
   }));
   panel.querySelector(".share-copy").onclick = async () => {
     try {
-      await copyText(sharedBookUrl(book));
-      showToast("书籍链接已复制");
-    } catch { showToast("复制失败，请复制浏览器地址", "error"); }
+      await copyText(shareCopy(book));
+      showToast("分享文案和链接已复制");
+    } catch { showToast("复制失败，请手动复制上方内容", "error"); }
   };
   panel.querySelector(".share-native").onclick = async () => {
     if (!navigator.share) {
-      await shareToPlatform("native", "你常用的社交平台", book);
+      await shareToPlatform("native", "你常用的社交平台", book, panel.querySelector(".share-native"));
       return;
     }
     try {
-      await navigator.share({ title: `《${book.title}》｜文硕阁`, text: `推荐一本好书：《${book.title}》`, url: sharedBookUrl(book) });
+      await navigator.share({ title: `《${book.title}》｜文硕阁`, text: shareMessage(book), url });
     } catch (error) {
       if (error?.name !== "AbortError") showToast("系统分享暂时不可用", "error");
     }
@@ -283,7 +337,7 @@ function setSharedBookParam(book) {
   history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
-async function openDialog(book, { updateUrl = true } = {}) {
+async function openDialog(book, { updateUrl = false } = {}) {
   const requestId = ++state.dialogRequest;
   const dialog = elements.dialog;
   state.activeBook = book;
@@ -304,7 +358,10 @@ async function openDialog(book, { updateUrl = true } = {}) {
   const cover = elements.template.content.querySelector(".book-object").cloneNode(true);
   applyCover(cover, book);
   dialog.querySelector(".dialog-cover-wrap").replaceChildren(cover);
-  if (!dialog.open) dialog.showModal();
+  if (!dialog.open) {
+    dialog.showModal();
+    lockPageScroll();
+  }
 
   try {
     const detail = await loadDetail(book.id);
@@ -336,14 +393,78 @@ function savedReaderProgress(book) {
   try { return JSON.parse(storageGet(readerProgressKey(book)) || "null"); } catch { return null; }
 }
 
+function applyReaderFontRules() {
+  if (!reader.rendition) return;
+  const fontSize = `${reader.fontSize / 10}pt`;
+  reader.rendition.themes.override("font-size", fontSize, true);
+  const stylesheet = `
+    :root { font-size: ${fontSize} !important; }
+    body { font-size: 1rem !important; }
+    p, li, blockquote, dd, dt, td, th { font-size: 1rem !important; }
+    p *, li *, blockquote *, dd *, dt *, td *, th * { font-size: inherit !important; }
+  `;
+  for (const content of reader.rendition.getContents?.() ?? []) {
+    const documentNode = content.document;
+    if (!documentNode?.head) continue;
+    let style = documentNode.getElementById("wenshuoge-reader-font");
+    if (!style) {
+      style = documentNode.createElement("style");
+      style.id = "wenshuoge-reader-font";
+      documentNode.head.append(style);
+    }
+    style.textContent = stylesheet;
+  }
+}
+
 function applyReaderAppearance() {
   if (!reader.rendition) return;
   reader.rendition.themes.select(reader.dark ? "night" : "paper");
-  reader.rendition.themes.override("font-size", `${reader.fontSize}%`, true);
+  applyReaderFontRules();
   elements.reader.classList.toggle("is-dark", reader.dark);
   elements.reader.querySelectorAll("[data-reader-font]").forEach((button) => {
     button.title = `当前字号 ${reader.fontSize}%`;
   });
+}
+
+function currentFullscreenElement() {
+  return document.fullscreenElement || document.webkitFullscreenElement || null;
+}
+
+function readerFullscreenTarget() {
+  return elements.reader.querySelector(".reader-shell");
+}
+
+function updateReaderFullscreenButton() {
+  const button = elements.reader.querySelector("[data-reader-fullscreen]");
+  const active = currentFullscreenElement() === readerFullscreenTarget();
+  button.textContent = active ? "退出" : "全屏";
+  button.setAttribute("aria-pressed", String(active));
+  button.setAttribute("aria-label", active ? "退出全屏阅读" : "进入全屏阅读");
+  window.requestAnimationFrame(() => {
+    if (reader.rendition) reader.rendition.resize(elements.readerStage.clientWidth, elements.readerStage.clientHeight);
+  });
+}
+
+async function toggleReaderFullscreen() {
+  try {
+    const target = readerFullscreenTarget();
+    if (currentFullscreenElement() === target) {
+      const exit = document.exitFullscreen || document.webkitExitFullscreen;
+      if (exit) await exit.call(document);
+      return;
+    }
+    const request = target.requestFullscreen || target.webkitRequestFullscreen;
+    if (!request) throw new Error("unsupported");
+    await request.call(target);
+  } catch {
+    showToast("当前浏览器暂不支持全屏阅读，请使用浏览器自带的全屏功能。", "error");
+  }
+}
+
+function exitReaderFullscreen() {
+  if (currentFullscreenElement() !== readerFullscreenTarget()) return;
+  const exit = document.exitFullscreen || document.webkitExitFullscreen;
+  if (exit) Promise.resolve(exit.call(document)).catch(() => {});
 }
 
 function setReaderTocOpen(open) {
@@ -446,13 +567,14 @@ async function openReader(book) {
   if (elements.dialog.open) elements.dialog.close();
   destroyReader();
   reader.activeBook = book;
-  reader.fontSize = 100;
+  reader.fontSize = savedReaderFontSize();
   reader.dark = false;
   setReaderTocOpen(false);
   elements.reader.querySelector(".reader-title").textContent = book.title;
   elements.reader.querySelector(".reader-progress").textContent = "正在载入上次阅读进度……";
   elements.readerStage.innerHTML = '<div class="reader-loading">正在整理篇章，请稍候……</div>';
   elements.reader.showModal();
+  lockPageScroll();
 
   try {
     const authorization = await fetch("/api/readers/authorize", {
@@ -474,6 +596,7 @@ async function openReader(book) {
       body: { color: "#dfd4c1 !important", background: "#211b18 !important", "line-height": "1.9 !important" },
       a: { color: "#d69a83 !important" },
     });
+    reader.rendition.on("rendered", applyReaderFontRules);
     applyReaderAppearance();
     reader.rendition.on("relocated", updateReaderProgress);
     const saved = savedReaderProgress(book);
@@ -510,7 +633,14 @@ function makeCard(book) {
 }
 
 function renderCount() {
-  const lead = state.query ? `“${state.query}” 找到 ` : state.category !== "all" ? `${state.category}共有 ` : "阁中现藏 ";
+  const verificationLabel = state.verification === "reviewed" ? "已核验书籍" : "未核验书籍";
+  const lead = state.query
+    ? `“${state.query}” 找到 `
+    : state.category !== "all"
+      ? `${state.category}共有 `
+      : state.verification !== "all"
+        ? `${verificationLabel}共有 `
+        : "阁中现藏 ";
   const strong = document.createElement("strong");
   strong.textContent = state.filtered.length.toLocaleString("zh-CN");
   elements.count.replaceChildren(document.createTextNode(lead), strong, document.createTextNode(" 册书"));
@@ -523,7 +653,7 @@ function render() {
   elements.empty.hidden = state.filtered.length !== 0;
   elements.grid.hidden = state.filtered.length === 0;
   elements.more.hidden = state.visible >= state.filtered.length;
-  elements.clear.hidden = !state.query && state.format === "all" && state.category === "all";
+  elements.clear.hidden = !state.query && state.verification === "all" && state.category === "all";
   renderCount();
 }
 
@@ -534,7 +664,8 @@ function normalize(value) {
 function filterBooks({ reset = true } = {}) {
   const query = normalize(state.query);
   state.filtered = state.books.filter((book) => {
-    if (state.format !== "all" && !book.formats.includes(state.format)) return false;
+    if (state.verification === "reviewed" && !book.reviewed) return false;
+    if (state.verification === "unreviewed" && book.reviewed) return false;
     if (state.category !== "all" && book.category !== state.category) return false;
     if (!query) return true;
     return normalize([book.title, book.author, book.category, book.era, ...book.subjects].join(" ")).includes(query);
@@ -605,15 +736,15 @@ document.querySelector("#hero-search").addEventListener("submit", (event) => { e
 document.querySelector("#catalog-search").addEventListener("submit", (event) => { event.preventDefault(); searchFor(elements.catalogQuery.value); });
 elements.catalogQuery.addEventListener("input", (event) => searchFor(event.target.value));
 document.querySelectorAll("[data-query]").forEach((button) => button.addEventListener("click", () => searchFor(button.dataset.query, { scroll: true })));
-document.querySelectorAll("[data-format]").forEach((button) => button.addEventListener("click", () => {
-  document.querySelectorAll("[data-format]").forEach((item) => item.classList.toggle("active", item === button));
-  state.format = button.dataset.format;
+document.querySelectorAll("[data-review]").forEach((button) => button.addEventListener("click", () => {
+  document.querySelectorAll("[data-review]").forEach((item) => item.classList.toggle("active", item === button));
+  state.verification = button.dataset.review;
   filterBooks();
 }));
 elements.clear.addEventListener("click", () => {
-  state.format = "all";
+  state.verification = "all";
   state.category = "all";
-  document.querySelectorAll("[data-format]").forEach((item) => item.classList.toggle("active", item.dataset.format === "all"));
+  document.querySelectorAll("[data-review]").forEach((item) => item.classList.toggle("active", item.dataset.review === "all"));
   updateCategoryButtons();
   searchFor("");
 });
@@ -624,10 +755,11 @@ elements.dialog.addEventListener("close", () => {
   state.statsRequest += 1;
   state.activeBook = null;
   setSharedBookParam(null);
+  unlockPageScroll();
 });
 elements.dialog.addEventListener("click", (event) => { if (event.target === elements.dialog) elements.dialog.close(); });
 elements.reader.querySelector(".reader-close").addEventListener("click", () => elements.reader.close());
-elements.reader.addEventListener("close", destroyReader);
+elements.reader.addEventListener("close", () => { exitReaderFullscreen(); destroyReader(); unlockPageScroll(); });
 elements.reader.addEventListener("click", (event) => { if (event.target === elements.reader) elements.reader.close(); });
 elements.reader.querySelector('[data-reader-toc="toggle"]').addEventListener("click", () => setReaderTocOpen(!reader.tocOpen));
 elements.reader.querySelector('[data-reader-toc="close"]').addEventListener("click", () => setReaderTocOpen(false));
@@ -636,10 +768,15 @@ document.querySelectorAll("[data-reader-nav]").forEach((button) => button.addEve
   reader.rendition?.[action]();
 }));
 document.querySelectorAll("[data-reader-font]").forEach((button) => button.addEventListener("click", () => {
-  reader.fontSize = Math.max(75, Math.min(150, reader.fontSize + (button.dataset.readerFont === "larger" ? 10 : -10)));
+  reader.fontSize = Math.max(50, reader.fontSize + (button.dataset.readerFont === "larger" ? READER_FONT_STEP : -READER_FONT_STEP));
+  storageSet(READER_FONT_SIZE_KEY, String(reader.fontSize));
   applyReaderAppearance();
 }));
 document.querySelector("[data-reader-theme]").addEventListener("click", () => { reader.dark = !reader.dark; applyReaderAppearance(); });
+elements.reader.querySelector("[data-reader-fullscreen]").addEventListener("click", toggleReaderFullscreen);
+document.addEventListener("fullscreenchange", updateReaderFullscreenButton);
+document.addEventListener("webkitfullscreenchange", updateReaderFullscreenButton);
+updateReaderFullscreenButton();
 document.addEventListener("keydown", (event) => {
   if (!elements.reader.open || event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
   if (event.key === "ArrowLeft") reader.rendition?.prev();
@@ -653,13 +790,13 @@ async function init() {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     state.categories = data.c;
-    state.books = data.b.map(([id, title, author, subjects, formatMask, filename, epubSize, pdfSize, category, era]) => {
+    state.books = data.b.map(([id, title, author, subjects, formatMask, filename, epubSize, pdfSize, category, era, reviewed]) => {
       const formats = [];
       const paths = {};
       const sizes = {};
       if (formatMask & 1) { formats.push("epub"); paths.epub = `ebookfiles/${id}/${filename}.epub`; sizes.epub = epubSize; }
       if (formatMask & 2) { formats.push("pdf"); paths.pdf = `ebookfiles/${id}/${filename}.pdf`; sizes.pdf = pdfSize; }
-      return { id, title, author, subjects, formats, paths, sizes, category, era };
+      return { id, title, author, subjects, formats, paths, sizes, category, era, reviewed: reviewed === 1 };
     });
     document.querySelector("#hero-total").textContent = data.t.toLocaleString("zh-CN");
     document.querySelector("#reviewed-total").textContent = data.r.toLocaleString("zh-CN");
@@ -670,7 +807,10 @@ async function init() {
     updateCategoryButtons();
     searchFor(params.get("q") || "");
     const sharedBook = state.books.find((book) => String(book.id) === params.get("book"));
-    if (sharedBook) openDialog(sharedBook, { updateUrl: false });
+    if (sharedBook) {
+      location.replace(sharedBookUrl(sharedBook));
+      return;
+    }
   } catch (error) {
     console.error("书目加载失败", error);
     elements.grid.replaceChildren();

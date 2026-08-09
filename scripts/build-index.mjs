@@ -11,13 +11,15 @@ const detailsDir = join(publicDir, "book-details-v2");
 const metadataBatchesDir = join(root, "metadata", "batches");
 const featuredIds = new Set(["1", "2", "6", "10", "22", "23", "25", "26", "28", "35", "37", "40"]);
 const detailShardSize = 500;
+const unknownAuthorPattern = /^(?:佚名|未知|不详|无名氏|匿名)$/u;
 const categoryOrder = [
-  "经学礼制", "史地文献", "诸子哲思", "诗词文集", "小说", "戏曲",
+  "经学礼制", "史地文献", "诸子哲思", "诗词文集", "文学评论", "小说", "戏曲",
   "医学养生", "科学技艺", "佛教典籍", "道教典籍", "语言文字",
   "艺术鉴藏", "外国文学", "近现代人文", "综合其他",
 ];
 
 const categoryRules = [
+  { name: "文学评论", subject: /文学批评|文学评论|诗论|词论|诗话|词话|曲论|戏曲评论|戏曲理论/u, title: /诗话|词话|诗品|词品|曲品|剧品|曲论|词论|诗论/u, text: /文学批评|文学评论|诗词评论|戏曲批评|戏曲理论/u },
   { name: "佛教典籍", subject: /佛教|佛经|佛学|禅宗|净土|密宗|经律论|大藏经/u, title: /佛|禅|菩萨|般若|法华|华严|金刚经|楞严|阿弥陀/u, text: /佛教|佛经|寺院|高僧/u },
   { name: "道教典籍", subject: /道教|丹道|修炼|房中术|北派五大家/u, title: /道藏|真经|仙|真人|丹经|悟真|太上|洞玄/u, text: /道教|道家修炼|内丹|外丹/u },
   { name: "医学养生", subject: /中医|医经|医案|医论|方书|本草|针灸|温热伤寒|妇科|幼科|养生|法医/u, title: /医|本草|脉经|伤寒|金匮|方论|药性|洗冤/u, text: /医学|医药|诊治|药物|疾病|法医学/u },
@@ -46,6 +48,15 @@ const eraPatterns = [
   ["先秦", /先秦|春秋|战国|西周|商代|商朝|夏代|夏朝/u],
 ];
 
+function bookSlug(title) {
+  return title.normalize("NFKC")
+    .replace(/[《》「」『』【】〔〕（）()]/gu, "")
+    .replace(/[^\p{L}\p{N}]+/gu, "-")
+    .replace(/^-+|-+$/gu, "")
+    .toLocaleLowerCase("zh-CN")
+    .slice(0, 80) || "book";
+}
+
 async function loadEnhancements() {
   const merged = new Map();
   const inheritance = new Map();
@@ -61,9 +72,11 @@ async function loadEnhancements() {
     for (const [id, record] of Object.entries(batch.books ?? {})) {
       merged.set(id, { ...(merged.get(id) ?? {}), ...record, batch: batch.batch ?? filename.slice(0, 3) });
     }
-    for (const [id, sourceId] of Object.entries(batch.inherits ?? {})) {
+    for (const [id, inheritanceValue] of Object.entries(batch.inherits ?? {})) {
+      const detailedInheritance = inheritanceValue && typeof inheritanceValue === "object";
       inheritance.set(id, {
-        sourceId: String(sourceId),
+        sourceId: String(detailedInheritance ? inheritanceValue.from : inheritanceValue),
+        overrides: detailedInheritance ? (inheritanceValue.overrides ?? {}) : {},
         batch: batch.batch ?? filename.slice(0, 3),
       });
     }
@@ -78,6 +91,7 @@ async function loadEnhancements() {
     if (!source) throw new Error(`书目 ${id} 继承的来源 ${link.sourceId} 不存在`);
     const inherited = {
       ...source,
+      ...link.overrides,
       batch: link.batch,
       inheritedFrom: link.sourceId,
     };
@@ -267,13 +281,49 @@ const payload = {
     const filename = basename(book.paths[primaryFormat], `.${primaryFormat}`);
     return [
       book.id, book.title, book.author, book.subjects, formatMask, filename,
-      book.sizes.epub ?? 0, book.sizes.pdf ?? 0, book.category, book.era,
+      book.sizes.epub ?? 0, book.sizes.pdf ?? 0, book.category, book.era, book.reviewed ? 1 : 0,
     ];
   }),
 };
 
 const serialized = JSON.stringify(payload);
 await writeFile(join(publicDir, "books.json"), serialized);
+
+const sitemapDate = payload.g.slice(0, 10);
+const sitemapUrls = [
+  ["https://www.wenshuoge.com/", "1.0"],
+  ["https://www.wenshuoge.com/authors", "0.8"],
+  ["https://www.wenshuoge.com/about", "0.6"],
+  ["https://www.wenshuoge.com/contact", "0.5"],
+  ["https://www.wenshuoge.com/copyright", "0.5"],
+  ["https://www.wenshuoge.com/terms", "0.5"],
+  ...books.map((book) => [
+    `https://www.wenshuoge.com/book/${encodeURIComponent(book.id)}/${encodeURIComponent(bookSlug(book.title))}`,
+    "0.7",
+  ]),
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls
+  .map(([loc, priority]) => `  <url><loc>${loc}</loc><lastmod>${sitemapDate}</lastmod><changefreq>monthly</changefreq><priority>${priority}</priority></url>`)
+  .join("\n")}\n</urlset>\n`;
+await writeFile(join(publicDir, "sitemap.xml"), sitemap);
+
+const authorWorks = new Map();
+for (const book of books) {
+  const name = book.author.trim();
+  if (!name || unknownAuthorPattern.test(name)) continue;
+  if (!authorWorks.has(name)) authorWorks.set(name, []);
+  authorWorks.get(name).push([book.id, book.title, book.category, book.era]);
+}
+const authorCollator = new Intl.Collator("zh-CN");
+const authorPayload = {
+  g: payload.g,
+  t: authorWorks.size,
+  b: [...authorWorks.values()].reduce((total, works) => total + works.length, 0),
+  a: [...authorWorks.entries()]
+    .sort(([nameA, worksA], [nameB, worksB]) => worksB.length - worksA.length || authorCollator.compare(nameA, nameB)),
+};
+const serializedAuthors = JSON.stringify(authorPayload);
+await writeFile(join(publicDir, "authors.json"), serializedAuthors);
 
 const detailShards = new Map();
 for (const book of books) {
@@ -295,5 +345,5 @@ for (const [shard, details] of detailShards) {
 }
 
 process.stdout.write(
-  `索引完成：${books.length} 本，${enhancements.records.size} 本人工增强，${detailShards.size} 个详情分片，${Buffer.byteLength(serialized)} 字节\n`,
+  `索引完成：${books.length} 本，${authorWorks.size} 位署名作者，${enhancements.records.size} 本人工增强，${detailShards.size} 个详情分片，${Buffer.byteLength(serialized)} 字节\n`,
 );

@@ -54,11 +54,13 @@ for (const filename of filenames) {
     if (record.reviewed !== true) fail(`${filename} 书目 ${id} 未标记 reviewed: true`);
   }
 
-  for (const [id, sourceIdValue] of Object.entries(data.inherits ?? {})) {
-    const sourceId = String(sourceIdValue);
+  for (const [id, inheritanceValue] of Object.entries(data.inherits ?? {})) {
+    const detailedInheritance = inheritanceValue && typeof inheritanceValue === "object";
+    const sourceId = String(detailedInheritance ? inheritanceValue.from : inheritanceValue);
+    const overrides = detailedInheritance ? (inheritanceValue.overrides ?? {}) : {};
     if (ownership.has(id)) fail(`书目 ${id} 同时定义内容和继承关系（${filename}）`);
     ownership.set(id, filename);
-    inheritance.set(id, { sourceId, batch: data.batch, filename });
+    inheritance.set(id, { sourceId, overrides, batch: data.batch, filename });
     await requireBookDirectory(id, filename);
   }
 }
@@ -76,12 +78,32 @@ function resolve(id, chain = []) {
     fail(`${link.filename} 书目 ${id} 的继承来源 ${link.sourceId} 不存在`);
     return null;
   }
-  const inherited = { ...source, batch: link.batch, inheritedFrom: link.sourceId };
+  const inherited = { ...source, ...link.overrides, batch: link.batch, inheritedFrom: link.sourceId };
   records.set(id, inherited);
   return inherited;
 }
 
 for (const id of inheritance.keys()) resolve(id);
+
+for (const [id, link] of inheritance) {
+  const record = records.get(id);
+  if (!record) continue;
+  for (const field of requiredTextFields) {
+    if (!String(record[field] ?? "").trim()) fail(`${link.filename} 继承书目 ${id} 缺少 ${field}`);
+  }
+  if (!Array.isArray(record.tags) || record.tags.length < 3) {
+    fail(`${link.filename} 继承书目 ${id} 至少需要 3 个标签`);
+  }
+  if (!Array.isArray(record.sources) || record.sources.length < 1) {
+    fail(`${link.filename} 继承书目 ${id} 至少需要 1 个来源`);
+  } else {
+    for (const source of record.sources) {
+      if (!String(source?.title ?? "").trim()) fail(`${link.filename} 继承书目 ${id} 存在无标题来源`);
+      if (!/^https:\/\//u.test(String(source?.url ?? ""))) fail(`${link.filename} 继承书目 ${id} 的来源必须使用 HTTPS`);
+    }
+  }
+  if (record.reviewed !== true) fail(`${link.filename} 继承书目 ${id} 未标记 reviewed: true`);
+}
 
 const index = JSON.parse(await readFile(join(publicDir, "books.json"), "utf8"));
 if (index.m !== filenames.length) fail(`公开索引批次数为 ${index.m}，应为 ${filenames.length}`);
